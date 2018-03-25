@@ -1,0 +1,37 @@
+uuid: 45cd7940-85cb-4ebf-b166-829459de7e32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.octubretv_videos.body
+    - field.field.node.octubretv_videos.field_categoria_videos
+    - field.field.node.octubretv_videos.field_codigo_vimeo
+    - field.field.node.octubretv_videos.field_fecha
+    - field.field.node.octubretv_videos.field_imagenes_portada
+    - field.field.node.octubretv_videos.field_tags
+    - field.field.node.octubretv_videos.field_tumbnail
+    - node.type.octubretv_videos
+  module:
+    - text
+    - user
+id: node.octubretv_videos.default
+targetEntityType: node
+bundle: octubretv_videos
+mode: default
+content:
+  field_codigo_vimeo:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  field_categoria_videos: true
+  field_fecha: true
+  field_imagenes_portada: true
+  field_tags: true
+  field_tumbnail: true
+  links: true

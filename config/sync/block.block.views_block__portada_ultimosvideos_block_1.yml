@@ -1,0 +1,30 @@
+uuid: 0eb70335-6f23-41b0-85c1-d3e694139f1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.portada_ultimosvideos
+  module:
+    - system
+    - views
+  theme:
+    - octb
+id: views_block__portada_ultimosvideos_block_1
+theme: octb
+region: content
+weight: -14
+provider: null
+plugin: 'views_block:portada_ultimosvideos-block_1'
+settings:
+  id: 'views_block:portada_ultimosvideos-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

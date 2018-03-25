@@ -1,0 +1,29 @@
+uuid: ba3edd38-8dc4-46d0-8180-ccd5d189a5bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categoria_videos
+    - node.type.octubretv_videos
+    - taxonomy.vocabulary.categoria_video
+id: node.octubretv_videos.field_categoria_videos
+field_name: field_categoria_videos
+entity_type: node
+bundle: octubretv_videos
+label: 'Categoría vídeos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      categoria_video: categoria_video
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

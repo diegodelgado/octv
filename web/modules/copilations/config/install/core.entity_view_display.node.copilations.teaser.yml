@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.copilations.body
+    - field.field.node.copilations.comment_node_copilations
+    - field.field.node.copilations.field_codigo_playlist
+    - field.field.node.copilations.field_fecha_tema
+    - field.field.node.copilations.field_portada_track
+    - field.field.node.copilations.taxonomy_vocabulary_3
+    - node.type.copilations
+  module:
+    - datetime
+    - text
+    - user
+id: node.copilations.teaser
+targetEntityType: node
+bundle: copilations
+mode: teaser
+content:
+  body:
+    label: hidden
+    weight: 9
+    type: text_summary_or_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_fecha_tema:
+    label: hidden
+    weight: 5
+    type: datetime_default
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+  taxonomy_vocabulary_3:
+    label: above
+    weight: 10
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  comment_node_copilations: true
+  field_codigo_playlist: true
+  field_portada_track: true

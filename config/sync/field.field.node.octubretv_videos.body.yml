@@ -1,0 +1,22 @@
+uuid: 9eea49d0-4bc3-423b-90ea-a280b39a8ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.octubretv_videos
+  module:
+    - text
+id: node.octubretv_videos.body
+field_name: body
+entity_type: node
+bundle: octubretv_videos
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

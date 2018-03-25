@@ -1,0 +1,1591 @@
+/**
+ * Custom CSS
+ * Use this file to override styles if you feel uncomfortable editing
+ * component stylesheets.
+ ============================================================================ */
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800');
+
+html {
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+/* ESTRUCTURA GENERAL BORDE */
+
+html {
+
+
+
+}
+
+body {
+
+
+}
+
+.page {
+  background-color: #E5E1E5;
+
+
+}
+
+
+#main-content {
+  margin-top: 100px;
+
+
+
+}
+
+.l-pr.attribution {
+  display: none;
+}
+
+/* TIPOGRAFIAS */
+
+
+p, h2, .views-field-title  {
+  color: black;
+}
+
+.views-field-title a {
+  color: black;
+}
+
+p a {
+  border-bottom: 2px solid black;
+  color: black !important;
+}
+
+p a:hover {
+  border-bottom: none;
+  text-decoration: none;
+  color: black;
+
+}
+
+p, ol li {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: black;
+
+}
+
+h2  {
+  font-size: 35px;
+  font-weight: 700;
+
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: 700;
+
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+
+}
+
+.menu__link--wrapper a:hover {
+  border-bottom: 4px solid black;
+}
+
+
+/* MENU PRINCIPAL CABECERA */
+
+#block-octubre .menu__link--wrapper a {
+	color: black;
+	font-weight: 700;
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+
+
+
+.site-branding__text {
+  display: none;
+}
+
+#masthead .pr-header__header-first {
+
+  padding-left: 30px;
+  padding-right: 30px;
+
+
+}
+
+#masthead .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+
+#block-octb-branding {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 40px;
+}
+
+#main-content {
+
+}
+
+
+#masthead {
+  position: fixed;
+  width: 100%;
+  vertical-align: middle;
+
+  z-index: 2;
+  background: white;
+
+
+
+}
+
+
+
+#block-octubre {
+  margin-top: 20px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+#block-octubre a.is-active, .menu__item--active-trail a {
+  border-bottom: 4px solid black;
+
+}
+
+#block-octubre li {
+
+  display: inline-block;
+}
+
+
+#block-socialheader {
+  float: right;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+
+#block-octubre .menu__link {
+  font-weight: 700;
+  color: black;
+  font-size: 21px;
+  line-height: 26px;
+  margin-right: 12px;
+}
+
+
+ul.menusocial  {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul.menusocial  li {
+  display: inline-block;
+}
+
+ul.menusocial  li a {
+  color: black;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+
+.pr-header__header-second {
+  text-align: right;
+
+}
+
+/*ANCHOS TAMAÑOS */
+
+
+
+#block-views-block-video-portada-block-1 .block__inner,
+.pr-subfeatures__rw,
+.view-pagina-playlist
+
+
+ {
+
+   max-width: 1300px;
+   margin-left: auto;
+   margin-right: auto;
+
+
+
+}
+
+.path-user #main-content {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 50px;
+}
+
+#block-simplenewssubscription {
+	margin-left: 20px;
+	margin-right: 20px;
+
+}
+
+.path-user #main-content .container, #block-simplenewssubscription .block__inner {
+	max-width: 900px;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+
+
+.view-pagina-videos,
+#block-views-block-portada-ultimosvideos-block-1 .block__inner,
+.view-pagina-galerias,
+#block-views-block-porada-blog-block-1 .block__inner,
+.view-pagina-blog,
+.view-videos-realcionados,
+.view-contenido-realcionados-blog,
+#block-views-block-porada-blog-block-3 .block__inner
+ {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+#block-views-block-video-portada-block-1 {
+  margin-top: 40px;
+}
+
+/* MARGENES*/
+
+#block-views-block-video-portada-block-1 .block__inner .block__content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+._grid.item-list {
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+
+
+
+#block-views-block-portada-ultimosvideos-block-1 {
+
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 0px;
+
+}
+
+#block-views-block-banner-largo-block-1 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* VIDEO PORTADA */
+
+.view-video-portada .views-field-title {
+  text-align: center;
+  font-size: 30px;
+  line-height: 33px;
+
+
+}
+
+.view-id-video_portada .views-field-field-imagenes-portada {
+	position: relative;
+}
+
+.view-id-video_portada .views-field-field-imagenes-portada .play-icon a {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url('images/play.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 73px;
+
+}
+
+.views-field-title {
+
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.view-video-portada p {
+  text-align: center;
+}
+
+.views-field-field-imagenes-portada {
+  margin-bottom: 30px;
+}
+
+h2.block__title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+/* RETICULA 3 columnas */
+
+.masonry-item.grid-3blog {
+  width: 32.9%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 70px;
+  padding-left: 70px;
+  padding-right: 70px;
+
+}
+.grid-3 {
+  width: 32.9%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.grid-4 {
+  width: 24.9%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.item-list ul {
+  padding: 0px;
+}
+
+
+/* RESPONSIVE */
+
+
+@media only screen and (max-width: 1100px) {
+  .grid-3, .masonry-item.grid-3blog {
+    width: 49.5%;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .grid-4 {
+	  width: 32.9%;
+
+
+  }
+
+   .view-banner-largo h1 {
+	  font-size: 50px !important;
+	  line-height: 56px !important;
+  }
+
+  .view-banner-largo p {
+	  font-size: 20px !important;
+  }
+  .view-banner-largo  {
+	  height: 350px !important;
+  }
+
+
+
+
+
+
+}
+
+@media only screen and (max-width: 720px) {
+  .grid-3, .masonry-item.grid-3blog {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  ul.menusocial li a {
+	  font-size: 23px !important;
+	  margin-right: 3px;
+  }
+
+  #block-octb-branding {
+	  margin-right: 20px;
+
+  }
+
+  .grid-4 {
+	  width: 49.5%;
+
+
+  }
+  #referencia #imagen-referencia, #referencia #contenido-referencia {
+	  width: 100% !important;
+  }
+
+
+  .view-banner-largo h1 {
+	  font-size: 50px !important;
+	  line-height: 56px !important;
+  }
+
+  .view-banner-largo p {
+	  font-size: 20px !important;
+  }
+  .view-banner-largo  {
+	  height: 250px !important;
+  }
+
+  h1 {
+	  font-size: 30px !important;
+	  line-height: 35px !important;
+  }
+
+
+}
+
+
+/*CABECERA BLOG */
+
+#block-views-block-cabecera-blog-block-1 {
+  height: 50px;
+  overflow: hidden;
+  margin-top: -20px;
+  margin-bottom: 60px;
+
+}
+
+
+
+#block-views-block-cabecera-blog-block-1 img {
+  width: 100%;
+  height: auto;
+  margin-top: -25%;
+
+
+
+}
+
+
+
+/* BANNER front */
+
+.view-banner-largo {
+  height: 460px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+
+
+
+}
+
+
+
+.view-banner-largo p {
+  color: white;
+}
+
+.views-field-field-imagen-banner .field-content {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+
+
+
+
+}
+
+.views-field-field-imagen-banner .field-content img {
+  width: 100%;
+  height: 100%;
+  vertical-align: center;
+  position: absolute;
+  object-position: center;
+  object-fit: cover;
+
+}
+
+
+
+.view-banner-largo .views-field-body {
+  color: white;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0px;
+z-index: 3;
+  display: flex;
+  align-items: center;
+
+}
+
+.view-banner-largo .views-field-body .field-content  {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+.view-banner-largo h1 {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 95px;
+
+}
+
+.view-banner-largo h1 a {
+  color: white;
+}
+
+.view-banner-largo p {
+  font-size: 40px;
+
+}
+
+/* MAS */
+
+.mas {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.mas a {
+  padding: 2px 18px;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  border: 7px solid black;
+}
+
+
+
+  /* BLOG */
+
+.view-porada-blog h3 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400 !important;
+
+}
+
+
+
+
+/* VIDEO RESPONSIVE */
+
+.field-node--field-codigo-vimeo iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.field-node--field-codigo-vimeo {
+    height: 0;
+    margin-bottom: 40px;
+    overflow: hidden;
+    padding-bottom: 54%;
+    padding-top: 30px;
+    position: relative;
+}
+
+
+
+.field-node--field-textovideo iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.field-node--field-textovideo {
+    height: 0;
+    margin-bottom: 40px;
+    overflow: hidden;
+    padding-bottom: 54%;
+    padding-top: 30px;
+    position: relative;
+}
+
+/* ADD TO ANY */
+
+
+
+
+/* CONTENIDO NODO */
+
+.views-field-field-embed-music {
+	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.views-field-field-embed-music iframe {
+	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+.views-field-field-embed-music iframe  {
+	width: 70% !important;
+
+}
+
+.views-field-field-embed-music #player {
+
+}
+
+.page-node-type--noticias .views-field-field-imagen-news {
+
+}
+
+.views-field-field-embed-music {
+  margin-bottom: 20px;
+}
+
+.page-node-type--octubretv-videos article .node__container, article.node--type-noticias,
+.node--type-playlist,
+.node--type-gallery,
+.page-node-type--page #block-octb-content
+
+ {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+
+}
+
+
+
+.node--type-playlist {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+#block-views-block-nodo-contenido-block-1 .block__inner {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+
+}
+
+#block-views-block-nodo-contenido-block-1 {
+  margin-top: 0px;
+}
+
+article {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.page-node-type--octubretv-videos article h1.node__title,
+.page-node-type--noticias article h1.node__title {
+  display: none;
+
+}
+
+
+#block-octb-content {
+  margin-bottom: 0px !important;
+}
+
+#block-views-block-nodo-contenido-block-1 .views-field-title {
+  margin-top: 0px !important;
+}
+
+#player {
+  width: 100% !important;
+}
+
+
+/* PAGINA VIDEOS */
+
+
+h1.page__title {
+  text-align: center;
+}
+
+
+/* PLAYLISTS */
+
+.view-pagina-playlist ol li {
+  font-size: 17px;
+}
+
+.view-pagina-playlist .masonry-item.grid-3 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* PAGINA BLOG */
+
+
+.view-id-pagina_blog .views-field-title {
+
+    font-weight: 400;
+
+}
+
+
+/* PLAYLISTS */
+
+.node--type-playlist iframe {
+  text-align: center;
+}
+
+
+/* NODO GALERIAS */
+
+.node--type-gallery .field-node--field-fotos-galeria{
+  margin-top: 50px;
+}
+
+.field-type-image__item {
+  margin-bottom: 50px;
+}
+
+
+/* VIDEOS RELACIONADOS */
+
+#block-views-block-videos-realcionados-block-1,
+#block-views-block-contenido-realcionados-blog-block-1,
+#block-views-block-porada-blog-block-3,
+#block-views-block-pagina-playlist-block-1 {
+  margin-top: 80px;
+
+}
+
+#block-views-block-porada-blog-block-3 {
+  padding-top: 40px;
+  background-color: #f4f4f4;
+  padding-bottom: 40px;
+}
+
+
+/* PAGER */
+
+.pager__items a {
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+
+}
+
+.pager__items {
+
+
+}
+
+
+/* PAGE */
+
+.page-node-type--page #block-octb-content p {
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.page-node-type--page h1 {
+  display: none;
+}
+
+
+/** FOOTER **/
+
+.pr-footer {
+  background-color: white;
+  color: black;
+  font-weight: 700;
+}
+
+#footer {
+  padding-top: 50px;
+  padding-bottom: 30px;
+
+}
+
+#footer p a {
+  color: black;
+}
+
+#footer p {
+  font-size: 15px;
+}
+
+#footer  #edit-message {
+  font-size: 30px;
+}
+
+#footer .l-rw {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center !important;
+
+}
+
+#edit-subscribe {
+  background-color: white;
+  background-image: none;
+  border: 4px solid black;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+
+}
+
+
+#block-simplenewssubscription {
+  margin-top: 0px;
+}
+
+#edit-subscribe:hover {
+  border: none;
+}
+
+#block-logocolor img {
+  max-width: 70px;
+  height: auto;
+}
+#block-logocolor p {
+  display: none;
+}
+
+#block-logocolor  {
+  margin: 0px;
+
+}
+
+.page-node-type--page #block-logocolor {
+
+}
+
+#block-menufooter1 {
+  float: none;
+}
+
+.pr-footer__footer .block-menu .menu-level-1 .menu__item {
+  float: none;
+  display: inline-block;
+}
+
+.pr-footer__footer .block-menu .menu-level-1 .menu__item a {
+  border-bottom: 4px solid white;
+
+}
+
+.pr-footer__footer .block-menu .menu-level-1 .menu__item a:hover {
+  border-bottom: 4px solid black;
+
+}
+
+#block-infofooter {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+/* MENU MOBILE*/
+.openmenum, .closebtn {
+		display: none;
+	}
+
+
+@media (max-width: 1090px) {
+
+#block-octubre-menu ul.menu {
+	padding-left: 0px!important;
+}
+
+
+
+
+.openmenum, .closebtn {
+		display: block;
+	}
+
+.openmenum {
+
+	position: absolute;
+
+  z-index: 100;
+}
+
+
+
+.path-frontpage .openmenum {
+	color: black;
+
+}
+
+.scroll-on .openmenum {
+	color:black!important;
+
+}
+
+	.overlay {
+	    height: 0%;
+	    width: 100%;
+	    position: fixed;
+	    z-index: 100;
+	    top: 0;
+	    left: 0;
+	    background-color: rgb(230,226,230);
+	    background-color: rgba(230,226,230, 1);
+	    overflow-y: hidden;
+	    transition: 0.5s;
+	}
+
+	.overlay-content {
+	    position: relative;
+	    top: 25%;
+	    width: 100%;
+	    text-align: center;
+	    margin-top: 30px;
+	}
+
+	.overlay a {
+	    padding: 8px;
+	    text-decoration: none;
+	    font-size: 36px !important;
+	    color: #818181;
+	    display: block;
+	    transition: 0.3s;
+	}
+
+	.overlay a:hover, .overlay a:focus {
+	    color: #cccccc;
+	}
+
+	.overlay .closebtn {
+	    position: absolute;
+	    top: 20px;
+	    right: 45px;
+	    font-size: 60px;
+	}
+
+	#myNav li {
+		text-align: center;
+		width: 100%;
+
+	}
+
+	@media screen and (max-height: 450px) {
+	  .overlay {overflow-y: auto;}
+	  .overlay a {font-size: 20px}
+	  .overlay .closebtn {
+	    font-size: 40px;
+	    top: 15px;
+	    right: 35px;
+	  }
+	}
+
+
+
+}
+
+
+
+/* CONFIRM NEWSLETTER */
+
+.path-newsletter #block-simplenewssubscription {
+	display: none;
+
+}
+
+.path-newsletter h1 {
+	padding-top: 50px;
+}
+
+#simplenews-confirm-add {
+	text-align: center;
+	margin-bottom: 200px;
+
+}
+
+#edit-submit {
+	margin-right: 15px;
+	background-color: white;
+  background-image: none;
+  border: 4px solid black;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+}
+
+#edit-submit:hover {
+	background-color: #ffdeda;
+
+}
+
+
+#edit-cancel {
+
+	background-color: white;
+  background-image: none;
+  border: 4px solid #717171;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+
+}
+
+.path-newsletter #edit-actions {
+	vertical-align: middle;
+
+}
+
+
+.path-newsletter-subscriptions #block-octb-content {
+
+	max-width: 700px;
+   margin-left: auto;
+   margin-right: auto;
+
+
+
+
+}
+
+.path-newsletter-subscriptions #simplenews-subscriber-page-form {
+	margin-bottom: 100px;
+
+}
+
+.path-newsletter-subscriptions .form-type-radio .option, .form-type-checkbox .option, .path-newsletter-subscriptions #edit-mail-0-value {
+	min-width: 100% !important;
+}
+
+/* MENSAJES */
+
+html .messages {
+	width: 300px;
+	position: fixed;
+	top: 120px;
+	z-index: 3;
+	background-color: #ffdeda;
+	border: none;
+
+
+}
+
+.messages a {
+	color: black;
+	text-decoration: underline;
+}
+
+.messages a:hover {
+	text-decoration: none;
+}
+
+.messages {
+	color: black;
+}
+
+
+/* BANNER */
+
+#block-views-block-banner-bloque-block-1 .block__inner {
+	    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+
+
+}
+
+#block-views-block-banner-bloque-block-1 .block__inner img {
+	width: 100%;
+	height: auto;
+}
+
+
+/* RELEASES */
+
+.path-product #block-octb-content .node__container {
+	max-width: 1100px !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+
+}
+
+.path-product #block-octb-page-title {
+	display: none;
+}
+
+.path-product p {
+	margin-left: 0px;
+	padding-left: 0px;
+
+}
+
+.field-node--field-link-itunes a, .path-product .field-node--body a {
+	color: black;
+    font-weight: 700;
+    font-size: 15px;
+    margin-right: 10px;
+
+    border-bottom: 4px solid black;
+}
+
+.field-node--field-link-itunes a:hover, .path-product .field-node--body a:hover {
+	text-decoration: none;
+
+    border-bottom: 0px solid black;
+}
+
+.field-node--field-link-itunes .field__item {
+	margin-bottom: 15px;
+
+}
+
+.slick__arrow .slick-arrow {
+	color: black;
+    font-weight: 700;
+    font-size: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    border-bottom: 4px solid black;
+	background: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+
+#referencia #imagen-referencia {
+	display: inline-block;
+	width: 60%;
+	padding: 10px;
+	vertical-align: top;
+
+}
+
+#referencia #contenido-referencia {
+	display: inline-block;
+	width: 38%;
+	padding: 10px;
+	vertical-align: top;
+
+}
+#escucha-referencia {
+	width: 100%;
+	padding: 10px;
+}
+
+#escucha-referencia .dentro {
+
+
+}
+
+/* VIDEOS RELACIONADOS PRODUCTO */
+
+.path-product .view-videos-realcionados ul {
+	text-align: center;
+
+}
+
+
+/* EDICIONES */
+
+#block-views-block-edicionesdig-block-2 .block__inner, #block-views-block-ediciones-block-2 .block__inner, .path-ediciones #block-octb-content .element-container-wrapper {
+	 max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+
+.view-id-ediciones .view-content, .view-ediciones-digitales .view-content, #block-views-block-edicionesdig-block-2 .view-content {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	text-align: center !important;
+}
+
+
+
+/* BUSCA */
+
+.path-search #block-octb-content {
+
+	max-width: 1100px !important;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+
+/* TIENDA */
+
+.path-cart #main-content .container, .path-checkout #main-content .container {
+	max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#navbar {
+	width: 100%;
+	position: fixed;
+	top: 89px;
+	background-color: #b3bcc1;
+	text-align: right;
+	padding-right: 40px;
+	z-index: 2;
+}
+
+
+
+
+
+
+
+
+.path-ediciones #main-content, .path-product #main-content, .path-checkout #main-content, .path-user-login #main-content {
+	margin-top: 130px;
+
+}
+
+
+
+
+
+
+
+
+a.cart-block--link__expand {
+	color: black;
+}
+
+.cart-empty-page {
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+.path-cart #main-content .container table {
+	width: 100%;
+}
+
+.views-field-purchased-entity a {
+	color: black;
+}
+
+.path-cart table {
+	background-color: white;
+}
+
+.path-cart table td {
+	padding: 15px;
+}
+
+.path-cart table th {
+	padding: 8px 15px;
+
+}
+
+.path-cart table th {
+	background-color: white;
+}
+
+.path-cart table tr:hover {
+	background-color: white;
+}
+
+#edit-login-returning-customer-submit, #edit-sidebar-coupon-redemption-form-apply, #edit-actions-next, #edit-login-register-register {
+	margin-right: 15px;
+	background-color: white;
+  background-image: none;
+  border: 4px solid black;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+
+}
+
+
+#edit-login-returning-customer-submit:hover, #edit-sidebar-coupon-redemption-form-apply:hover, #edit-actions-next:hover, #edit-login-register-register:hover {
+	background-color: #ffdeda;
+
+}
+
+
+#edit-checkout, #edit-login-guest-continue {
+	margin-right: 15px;
+	background-color: #ffdeda;
+  background-image: none;
+  border: 4px solid black;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+}
+
+#edit-checkout:hover, #edit-login-guest-continue:hover {
+	background-color: white;
+
+}
+
+.path-cart .form-actions {
+	margin-bottom: 50px;
+
+}
+
+.delete-order-item {
+	background-color: white;
+  background-image: none;
+  border: none;
+  color: black;
+  font-size:  15px;
+  text-decoration: underline;
+}
+
+.delete-order-item:hover {
+	background-color: white;
+  background-image: none;
+  border: none;
+  color: black;
+  font-size:  15px;
+  text-decoration: none;
+
+}
+
+.path-cart .page__title {
+
+	text-transform: uppercase;
+}
+
+#edit-login-guest p {
+	padding-left: 0px;
+}
+
+#edit-login-returning-customer {
+
+}
+
+#edit-login-returning-customer a {
+	color: black;
+}
+
+.fieldset-legend {
+	font-weight: 700;
+
+
+}
+
+legend {
+	margin-bottom: 30px;
+	font-size: 20px;
+	text-transform: uppercase;
+	width: 100%;
+	border-bottom:2px solid black;
+}
+
+#edit-payment-information-payment-method--wrapper legend {
+	border-bottom:none;
+	font-size: 15px;
+
+}
+
+fieldset {
+
+
+
+}
+
+#edit-payment-information-billing-information-address-0-address-family-name {
+	width: auto;
+}
+
+
+
+.path-checkout #block-octb-content {
+
+	background-color: white;
+	padding: 40px;
+	margin-bottom: 50px !important;
+
+
+}
+
+
+
+#edit-actions a {
+	color: black;
+}
+
+
+
+textarea, select, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+	width: 100% !important;
+}
+
+
+#block-octb-account-menu, #block-cart {
+	float: right;
+}
+
+#block-octb-account-menu {
+	margin-right: 20px;
+}
+
+#block-octb-account-menu a.menu__link:hover, #block-octb-account-menu a.menu__link.is-active {
+	border: none;
+	text-decoration: underline;
+
+}
+#block-octb-account-menu a.menu__link {
+	color: black;
+}
+
+#block-octb-account-menu .menu a {
+	display: inline;
+}
+
+.js-form-item-payment-information-payment-method label {
+	border-color: white;
+}
+
+.form-type-radio label.option, .form-type-checkbox label.option {
+	border-color: white;
+
+}
+
+
+.js-form-item-payment-information-payment-method {
+	width: 528px;
+	height: 100px;
+	background-image: url('http://www.octubre.tv/imagenes/metodos.jpg');
+	background-position-x: 0px;
+	background-position-y: 40px;
+	background-repeat: no-repeat;
+	background-size: 50%;
+}
+
+#edit-review-payment-information .field-profile--address {
+	padding-bottom:  50px !important;
+	background-image: url('http://www.octubre.tv/imagenes/metodos.jpg');
+	background-position: left bottom;
+
+	background-repeat: no-repeat;
+	background-size: 50%;
+
+}
+
+
+.checkout-pane-shipping-information {
+	margin-bottom: 50px;
+}
+
+.checkout-pane-shipping-information input.button {
+	color: black;
+	text-decoration: underline;
+	border: none;
+	padding-left: 0px;
+	background-image: none;
+	background-color: white;
+
+}
+
+
+.checkout-pane-shipping-information input.button:hover {
+	text-decoration: underline;
+}
+
+.view-videos-relacionados-para-productos {
+	max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+/* PLAYLIST OF THE MONTH */
+
+#block-views-block-playlist-of-the-month-block-1 {
+	max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 90px;
+
+}
+
+/* RELEASES PORTADA */
+
+#block-views-block-releases-portada-block-1 {
+	max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 90px;
+
+}
+
+#block-views-block-releases-portada-block-1 .masonry-item {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+/*CHECKOUT PROCESS */
+li.checkout-progress--step__current {
+      border-bottom: 3px solid black;
+}
+
+.block-config-provider--commerce-checkout {
+  text-align: center;
+}
+
+.checkout-progress--step__current {
+    font-weight: 600;
+}

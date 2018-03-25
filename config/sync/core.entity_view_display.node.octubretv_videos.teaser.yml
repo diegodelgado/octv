@@ -1,0 +1,29 @@
+uuid: 78c4945c-f7ec-4b28-9ea4-5f8a8003ac5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.octubretv_videos.body
+    - node.type.octubretv_videos
+  module:
+    - text
+    - user
+id: node.octubretv_videos.teaser
+targetEntityType: node
+bundle: octubretv_videos
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

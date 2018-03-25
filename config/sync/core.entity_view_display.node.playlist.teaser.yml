@@ -1,0 +1,29 @@
+uuid: bca97477-fc54-4558-aadc-4f1af5a2b307
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.playlist.body
+    - node.type.playlist
+  module:
+    - text
+    - user
+id: node.playlist.teaser
+targetEntityType: node
+bundle: playlist
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

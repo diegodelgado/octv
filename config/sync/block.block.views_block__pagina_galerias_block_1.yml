@@ -1,0 +1,33 @@
+uuid: f9abe930-f0f2-4eea-a576-d5afeb447e4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.pagina_galerias
+  module:
+    - node
+    - views
+  theme:
+    - octb
+id: views_block__pagina_galerias_block_1
+theme: octb
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:pagina_galerias-block_1'
+settings:
+  id: 'views_block:pagina_galerias-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      gallery: gallery
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,30 @@
+uuid: 545b9b61-33d9-4052-9f73-5e2b5f589ffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.playlist_of_the_month
+  module:
+    - system
+    - views
+  theme:
+    - octb
+id: views_block__playlist_of_the_month_block_1
+theme: octb
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:playlist_of_the_month-block_1'
+settings:
+  id: 'views_block:playlist_of_the_month-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

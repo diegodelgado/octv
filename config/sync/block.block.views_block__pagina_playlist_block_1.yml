@@ -1,0 +1,33 @@
+uuid: 7f095baf-9e2e-4b0e-889b-8dbe27e8c579
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.pagina_playlist
+  module:
+    - ctools
+    - views
+  theme:
+    - octb
+id: views_block__pagina_playlist_block_1
+theme: octb
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:pagina_playlist-block_1'
+settings:
+  id: 'views_block:pagina_playlist-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      playlist: playlist
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metaplaylist
+    - node.type.copilations
+  module:
+    - metatag
+id: node.copilations.field_metaplaylist
+field_name: field_metaplaylist
+entity_type: node
+bundle: copilations
+label: 'meta playlist'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

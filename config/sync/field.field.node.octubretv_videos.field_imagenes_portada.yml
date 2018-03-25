@@ -1,0 +1,38 @@
+uuid: 34b28730-21ea-4062-8426-d8f0bd3963e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_imagenes_portada
+    - node.type.octubretv_videos
+  module:
+    - image
+id: node.octubretv_videos.field_imagenes_portada
+field_name: field_imagenes_portada
+entity_type: node
+bundle: octubretv_videos
+label: imagenes_portada
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

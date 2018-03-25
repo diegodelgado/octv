@@ -1,0 +1,27 @@
+uuid: 9b9d2dbd-115d-4b3c-acd8-3433b1c5eb82
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - system
+  theme:
+    - octb
+id: cart
+theme: octb
+region: navbar
+weight: -13
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: 'Go to cart'
+  provider: commerce_cart
+  label_display: '0'
+  dropdown: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/ediciones*\r\n/checkout*"
+    negate: false
+    context_mapping: {  }

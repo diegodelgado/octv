@@ -1,0 +1,24 @@
+uuid: abf7fd3b-2049-4de7-979f-58f5ed5c2db3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha
+    - node.type.playlist
+  module:
+    - datetime
+id: node.playlist.field_fecha
+field_name: field_fecha
+entity_type: node
+bundle: playlist
+label: fecha
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

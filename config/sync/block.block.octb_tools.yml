@@ -1,0 +1,26 @@
+uuid: 5f7c7094-cd3c-453a-a0e9-6b6b55e53667
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: DlzvXPF86Fhy5BwvibWv1aXWGQ9OdI-UxuPrZvL3Jr4
+id: octb_tools
+theme: octb
+region: sidebar_second
+weight: -7
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

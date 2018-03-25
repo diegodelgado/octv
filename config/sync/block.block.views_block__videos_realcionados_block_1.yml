@@ -1,0 +1,25 @@
+uuid: 2a67a0c4-1deb-4355-bd1c-984c20cea914
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.videos_realcionados
+  module:
+    - views
+  theme:
+    - octb
+id: views_block__videos_realcionados_block_1
+theme: octb
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:videos_realcionados-block_1'
+settings:
+  id: 'views_block:videos_realcionados-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 53c64773-61b0-407c-a049-2af15387e73e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: _lLtDz-KM9mQBCsJlXZ56MCXvuFX_7NJHfcFAEbHkbk
+id: octb_content
+theme: octb
+region: content
+weight: -9
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

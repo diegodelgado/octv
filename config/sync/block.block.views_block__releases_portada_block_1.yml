@@ -1,0 +1,30 @@
+uuid: abaaf363-0c7c-4556-9969-fde5831899e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.releases_portada
+  module:
+    - system
+    - views
+  theme:
+    - octb
+id: views_block__releases_portada_block_1
+theme: octb
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:releases_portada-block_1'
+settings:
+  id: 'views_block:releases_portada-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

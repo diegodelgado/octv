@@ -1,0 +1,11 @@
+uuid: e68b2b51-3668-4c21-a147-9e93ebc1565f
+langcode: en
+status: true
+dependencies: {  }
+id: digital_release
+label: 'Digital release'
+description: ''
+variationType: digital
+injectVariationFields: true
+traits: {  }
+locked: false

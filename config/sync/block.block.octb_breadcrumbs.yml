@@ -1,0 +1,27 @@
+uuid: c4cb7307-a2a1-4156-9bdb-fdf0b3f922c9
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: ngJyABq_bbLxQQ-XaOe8pEjErowCCYBJxY77Q5omwrs
+id: octb_breadcrumbs
+theme: octb
+region: content_prefix
+weight: -13
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

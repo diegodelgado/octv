@@ -1,0 +1,22 @@
+uuid: b6624d92-cc2e-43c3-b71c-909a08bc2a22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.banner_lago
+  module:
+    - text
+id: node.banner_lago.body
+field_name: body
+entity_type: node
+bundle: banner_lago
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

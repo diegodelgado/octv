@@ -1,0 +1,22 @@
+uuid: 1dc566da-dce9-4a17-99a4-b6000937fd37
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.banner_lago
+id: node.banner_lago.promote
+field_name: promote
+entity_type: node
+bundle: banner_lago
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

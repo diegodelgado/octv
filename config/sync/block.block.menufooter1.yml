@@ -1,0 +1,24 @@
+uuid: 4af98761-4b8a-4a5e-8ec6-bf64c9630355
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-footer-1
+  module:
+    - system
+  theme:
+    - octb
+id: menufooter1
+theme: octb
+region: footer
+weight: -10
+provider: null
+plugin: 'system_menu_block:menu-footer-1'
+settings:
+  id: 'system_menu_block:menu-footer-1'
+  label: 'menu footer 1'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,20 @@
+name: Playlist
+description: 'Provides Playlist content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - block
+  - captcha
+  - datetime
+  - field
+  - file
+  - image
+  - masonry_views
+  - menu_ui
+  - metatag
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
+  - views

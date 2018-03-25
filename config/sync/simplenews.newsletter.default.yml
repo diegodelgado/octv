@@ -1,0 +1,19 @@
+uuid: c648025e-92da-4592-a348-8c48b6f5a64e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hj6zGNwndnW_J6lKfFcg-tY5e5YqWfgXyt0qioGtXL8
+name: news
+id: default
+description: 'This is an example newsletter. Change it.'
+format: plain
+priority: 0
+receipt: true
+from_name: octubre.tv
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: info@octubre.tv
+hyperlinks: false
+new_account: none
+opt_inout: double
+weight: 0

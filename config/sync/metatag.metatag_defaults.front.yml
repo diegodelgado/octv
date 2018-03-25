@@ -1,0 +1,22 @@
+uuid: 64ab3795-8a15-4542-8c1b-438671ffde0b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  keywords: 'live music video producers berlin, live music video producers barcelona, live music video producers, live music sessions, shoegaze videos, dream pop, live sessions, noise music berlin, DIY label, underground cassettes, music video producers berlin, electr'
+  shortlink: '[site:url]'
+  title: 'Live music video producers | [site:name]'
+  canonical_url: '[site:url]'
+  description: 'Live music video producers / Publishers / Playlists / Photography / Blog'
+  abstract: 'Live music video producers / Publishers / Playlists / Photography / Blog'
+  og_type: video
+  og_image: 'http://www.octubre.tv/imagenes/meta-images/oct-general.jpg'
+  og_image_url: 'http://www.octubre.tv/imagenes/meta-images/oct-general.jpg'
+  og_url: 'http://www.octubre.tv'
+  og_description: 'Live music video producers, publishers, playlists, photography, blog'
+  og_site_name: octubre.tv
+  og_title: '[current-page:title]'

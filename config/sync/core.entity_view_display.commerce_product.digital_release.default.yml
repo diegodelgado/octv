@@ -1,0 +1,78 @@
+uuid: 6263ba74-ac39-4f7b-a4be-003e2aa56451
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.digital_release
+    - field.field.commerce_product.digital_release.body
+    - field.field.commerce_product.digital_release.field_embed
+    - field.field.commerce_product.digital_release.field_links
+    - field.field.commerce_product.digital_release.field_released
+    - field.field.commerce_product.digital_release.field_tags
+    - field.field.commerce_product.digital_release.stores
+    - field.field.commerce_product.digital_release.variations
+  module:
+    - datetime
+    - link
+    - text
+id: commerce_product.digital_release.default
+targetEntityType: commerce_product
+bundle: digital_release
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_embed:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_links:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_released:
+    weight: 2
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_tags:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  stores: true
+  uid: true
+  variations: true

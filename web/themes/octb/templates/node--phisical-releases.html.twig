@@ -1,0 +1,33 @@
+<div class="node__container">
+
+<div id="referencia">
+<div id="imagen-referencia">
+
+{{ content.field_portadas }}
+
+</div>
+<div id="contenido-referencia">
+
+{{- title_prefix -}}
+      {%- if label -%}
+        {%- if view_mode == 'full' -%}
+          <h1{{ title_attributes.addClass('node__title') }}>{{- label -}}</h1>
+        {%- else -%}
+          <h2{{ title_attributes.addClass('node__title') }}><a href="{{ url }}" class="node__title-link" rel="bookmark">{{- label -}}</a></h2>
+        {%- endif -%}
+      {%- endif -%}
+      {{- title_suffix -}}
+{{ content.field_fecha_lanzamiento }}     
+{{ content.body }}
+{{ content.field_embed_ok }}
+<div class="field-node--field-link-itunes"><a href="{{ content.field_link_itunes.0['#url'] }}" target="_blank">{{ content.field_link_itunes.0['#title'] }}</a>
+<a href="{{ content.field_link_itunes.1['#url'] }}" target="_blank">{{ content.field_link_itunes.1['#title'] }}</a>
+<a href="{{ content.field_link_itunes.2['#url'] }}" target="_blank">{{ content.field_link_itunes.2['#title'] }}</a></div>
+
+
+
+</div>
+
+
+</div>
+</div>

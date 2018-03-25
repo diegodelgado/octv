@@ -1,0 +1,25 @@
+uuid: 51170c5b-dd63-436f-a9f9-4acd371ddc1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: t2GllnWLjQqNF8owSVzIzPRR2_b1yt--iQDZ2hsK-fw
+id: octb_branding
+theme: octb
+region: header_first
+weight: -14
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

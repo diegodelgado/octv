@@ -1,0 +1,24 @@
+uuid: 2391d4cc-ddca-4c82-a39f-33a7063afc6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha
+    - node.type.octubretv_videos
+  module:
+    - datetime
+id: node.octubretv_videos.field_fecha
+field_name: field_fecha
+entity_type: node
+bundle: octubretv_videos
+label: fecha
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,10 @@
+uuid: 0a1b1fcd-1f34-43d0-b199-aca0c92f08b5
+langcode: en
+status: true
+dependencies: {  }
+id: digital
+label: digital
+orderItemType: default
+generateTitle: false
+traits: {  }
+locked: false

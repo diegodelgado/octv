@@ -1,0 +1,26 @@
+uuid: 73153aa4-afe1-4fb6-b1a3-5c7bf9c5d54c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: yv0bWaC0CNfxPGUYuNqcSiF429KSNjOEihqaz6mgyGs
+id: octb_footer
+theme: octb
+region: footer
+weight: -8
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

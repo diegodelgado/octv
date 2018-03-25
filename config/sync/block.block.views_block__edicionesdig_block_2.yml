@@ -1,0 +1,31 @@
+uuid: ed31daf0-3e0f-460f-a033-79b51d48f7ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.edicionesdig
+  module:
+    - system
+    - views
+  theme:
+    - octb
+id: views_block__edicionesdig_block_2
+theme: octb
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:edicionesdig-block_2'
+settings:
+  id: 'views_block:edicionesdig-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/ediciones*'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,14 @@
+uuid: 0dbf75e2-8d66-4061-a784-3807cfd37e10
+langcode: en
+status: true
+dependencies: {  }
+name: video_portada
+label: video-portada
+effects:
+  52039880-8070-4756-9fbe-de7cbcc16d63:
+    uuid: 52039880-8070-4756-9fbe-de7cbcc16d63
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1300
+      height: 525

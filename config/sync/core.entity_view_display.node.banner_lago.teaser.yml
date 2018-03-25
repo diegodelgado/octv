@@ -1,0 +1,29 @@
+uuid: b0646661-85a4-4f17-afcd-3a7caaabbde4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.banner_lago.body
+    - node.type.banner_lago
+  module:
+    - text
+    - user
+id: node.banner_lago.teaser
+targetEntityType: node
+bundle: banner_lago
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

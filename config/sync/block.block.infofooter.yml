@@ -1,0 +1,25 @@
+uuid: 0476fb40-02d9-4855-90e2-53613f80a9e2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:502cffba-5b61-42e3-a7ff-814b403b54df'
+  module:
+    - block_content
+  theme:
+    - octb
+id: infofooter
+theme: octb
+region: footer
+weight: -9
+provider: null
+plugin: 'block_content:502cffba-5b61-42e3-a7ff-814b403b54df'
+settings:
+  id: 'block_content:502cffba-5b61-42e3-a7ff-814b403b54df'
+  label: 'info footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

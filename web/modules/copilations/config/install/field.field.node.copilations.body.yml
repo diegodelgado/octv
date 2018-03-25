@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.copilations
+  module:
+    - text
+id: node.copilations.body
+field_name: body
+entity_type: node
+bundle: copilations
+label: Body
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    summary: ''
+    value: "<br />\r\n"
+    format: '1'
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

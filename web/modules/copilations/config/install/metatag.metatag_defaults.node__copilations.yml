@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: node__copilations
+label: 'Content: Playlist'
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:body]'
+  og_image_url: '[node:field_portada_track]'
+  og_image: '[node:field_portada_track]'
+  og_description: '[node:body]'

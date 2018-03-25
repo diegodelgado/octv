@@ -1,0 +1,125 @@
+uuid: 3bb6e1e7-886d-4b4e-8309-e82788c75f88
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.digital_release
+    - field.field.commerce_product.digital_release.body
+    - field.field.commerce_product.digital_release.field_embed
+    - field.field.commerce_product.digital_release.field_links
+    - field.field.commerce_product.digital_release.field_released
+    - field.field.commerce_product.digital_release.field_tags
+    - field.field.commerce_product.digital_release.stores
+    - field.field.commerce_product.digital_release.variations
+  module:
+    - commerce
+    - datetime
+    - inline_entity_form
+    - link
+    - path
+    - text
+id: commerce_product.digital_release.default
+targetEntityType: commerce_product
+bundle: digital_release
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_embed:
+    weight: 94
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_links:
+    weight: 93
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_released:
+    weight: 91
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_tags:
+    weight: 92
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 90
+    region: content
+    third_party_settings: {  }
+  stores:
+    type: commerce_entity_select
+    weight: -10
+    settings:
+      hide_single_entity: true
+      autocomplete_threshold: 7
+      autocomplete_size: 60
+      autocomplete_placeholder: ''
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  variations:
+    type: inline_entity_form_complex
+    weight: 10
+    settings:
+      override_labels: true
+      label_singular: variation
+      label_plural: variations
+      form_mode: default
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    region: content
+hidden: {  }

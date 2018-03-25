@@ -1,0 +1,41 @@
+uuid: 2b584d68-a9d7-4769-a29e-7d0532a062dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_codigo_vimeo
+    - node.type.octubretv_videos
+  module:
+    - better_formats
+    - text
+third_party_settings:
+  better_formats:
+    allowed_formats_toggle: 1
+    allowed_formats:
+      codigo: codigo
+      basic_html: 0
+      restricted_html: 0
+      full_html: 0
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '0'
+        codigo:
+          weight: '0'
+        restricted_html:
+          weight: '0'
+        full_html:
+          weight: '1'
+id: node.octubretv_videos.field_codigo_vimeo
+field_name: field_codigo_vimeo
+entity_type: node
+bundle: octubretv_videos
+label: codigo_vimeo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

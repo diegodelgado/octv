@@ -1,0 +1,24 @@
+uuid: a16a73f0-3e54-46e7-9b8d-b2bba62bd342
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.octubre
+  module:
+    - system
+  theme:
+    - octb
+id: octubre
+theme: octb
+region: header_first
+weight: -13
+provider: null
+plugin: 'system_menu_block:octubre'
+settings:
+  id: 'system_menu_block:octubre'
+  label: octubre
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

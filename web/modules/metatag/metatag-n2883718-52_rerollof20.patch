@@ -1,0 +1,294 @@
+diff --git a/metatag_views/src/Controller/MetatagViewsController.php b/metatag_views/src/Controller/MetatagViewsController.php
+index 9173765..fd02fc9 100644
+--- a/metatag_views/src/Controller/MetatagViewsController.php
++++ b/metatag_views/src/Controller/MetatagViewsController.php
+@@ -4,6 +4,7 @@ namespace Drupal\metatag_views\Controller;
+ 
+ use Drupal\Core\Controller\ControllerBase;
+ use Drupal\Core\Entity\EntityStorageInterface;
++use Drupal\Core\Extension\ModuleHandlerInterface;
+ use Drupal\Core\Url;
+ use Drupal\metatag\MetatagManagerInterface;
+ use Drupal\views\Views;
+@@ -26,6 +27,11 @@ class MetatagViewsController extends ControllerBase {
+    */
+   protected $metatagManager;
+ 
++  /**
++   * @var ModuleHandlerInterface
++   */
++  protected $moduleHandler;
++
+   /**
+    * Associative array of labels.
+    *
+@@ -36,9 +42,10 @@ class MetatagViewsController extends ControllerBase {
+   /**
+    * {@inheritdoc}
+    */
+-  public function __construct(EntityStorageInterface $viewStorage, MetatagManagerInterface $metatagManager) {
++  public function __construct(EntityStorageInterface $viewStorage, MetatagManagerInterface $metatagManager, ModuleHandlerInterface $module_handler) {
+     $this->viewStorage = $viewStorage;
+     $this->metatagManager = $metatagManager;
++    $this->moduleHandler = $module_handler;
+ 
+     // Generate the labels for views and displays.
+     $this->labels = $this->getViewsAndDisplaysLabels();
+@@ -50,7 +57,8 @@ class MetatagViewsController extends ControllerBase {
+   public static function create(ContainerInterface $container) {
+     return new static(
+       $container->get('entity_type.manager')->getStorage('view'),
+-      $container->get('metatag.manager')
++      $container->get('metatag.manager'),
++      $container->get('module_handler')
+     );
+   }
+ 
+@@ -147,17 +155,21 @@ class MetatagViewsController extends ControllerBase {
+             'title' => t('Edit'),
+             'url' => Url::fromRoute('metatag_views.metatags.edit', $params),
+           ],
+-          'translate' => [
+-            'title' => t('Translate'),
+-            'url' => Url::fromRoute('metatag_views.metatags.translate_overview', $params),
+-          ],
+-          'revert' => [
+-            'title' => t('Revert'),
+-            'url' => Url::fromRoute('metatag_views.metatags.revert', $params),
+-          ],
+         ],
+       ];
+ 
++      if ($this->moduleHandler->moduleExists('config_translation')) {
++        $element[$display_id]['ops']['#links']['translate'] = [
++          'title' => t('Translate'),
++          'url' => Url::fromRoute('metatag_views.metatags.translate_overview', $params),
++        ];
++      }
++
++      $element[$display_id]['ops']['#links']['revert'] = [
++        'title' => t('Revert'),
++        'url' => Url::fromRoute('metatag_views.metatags.revert', $params),
++      ];
++
+       // Build the rows for each of the metatag types.
+       $element[$display_id]['details']['table'] = $this->buildDisplayDetailsTable($metatags);
+     }
+diff --git a/metatag_views/src/Form/MetatagViewsEditForm.php b/metatag_views/src/Form/MetatagViewsEditForm.php
+index 7a10a3e..302089e 100644
+--- a/metatag_views/src/Form/MetatagViewsEditForm.php
++++ b/metatag_views/src/Form/MetatagViewsEditForm.php
+@@ -6,7 +6,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\Core\Form\FormBase;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\metatag\MetatagManagerInterface;
+-use Drupal\metatag_views\MetatagViewsValuesCleanerTrait;
++use Drupal\metatag\MetatagTagPluginManager;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+@@ -16,15 +16,20 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
+  */
+ class MetatagViewsEditForm extends FormBase {
+ 
+-  use MetatagViewsValuesCleanerTrait;
+-
+   /**
+-   * Drupal\metatag\MetatagManager definition.
++   * The metatag manager.
+    *
+-   * @var \Drupal\metatag\MetatagManager
++   * @var \Drupal\metatag\MetatagManagerInterface
+    */
+   protected $metatagManager;
+ 
++  /**
++   * The plugin manager for metatag tags.
++   *
++   * @var \Drupal\metatag\MetatagTagPluginManager
++   */
++  protected $metatagTagManager;
++
+   /**
+    * @var \Drupal\Core\Entity\EntityStorageInterface
+    */
+@@ -47,7 +52,8 @@ class MetatagViewsEditForm extends FormBase {
+   /**
+    * {@inheritdoc}
+    */
+-  public function __construct(MetatagManagerInterface $metatag_manager, EntityTypeManagerInterface $entity_manager) {
++  public function __construct(MetatagTagPluginManager $metatag_plugin_manager, MetatagManagerInterface $metatag_manager, EntityTypeManagerInterface $entity_manager) {
++    $this->metatagTagManager = $metatag_plugin_manager;
+     $this->metatagManager = $metatag_manager;
+     $this->viewsManager = $entity_manager->getStorage('view');
+   }
+@@ -57,6 +63,7 @@ class MetatagViewsEditForm extends FormBase {
+    */
+   public static function create(ContainerInterface $container) {
+     return new static(
++      $container->get('plugin.manager.metatag.tag'),
+       $container->get('metatag.manager'),
+       $container->get('entity_type.manager')
+     );
+@@ -158,9 +165,21 @@ class MetatagViewsEditForm extends FormBase {
+     $view_name = $form_state->getValue('view');
+     list($view_id, $display_id) = explode(':', $view_name);
+ 
+-    $metatags = $form_state->getValues();
++    // Process submitted metatag values and remove empty tags.
++    $tag_values = [];
++    $metatags = $form_state->cleanValues()->getValues();
++
+     unset($metatags['view']);
+-    $metatags = $this->clearMetatagViewsDisallowedValues($metatags);
++    foreach ($metatags as $tag_id => $tag_value) {
++      // Some plugins need to process form input before storing it.
++      // Hence, we set it and then get it.
++      $tag = $this->metatagTagManager->createInstance($tag_id);
++      $tag->setValue($tag_value);
++      if (!empty($tag->value())) {
++        $tag_values[$tag_id] = $tag->value();
++      }
++    }
++    $metatags = $tag_values;
+ 
+     /** @var \Drupal\views\ViewEntityInterface $view */
+     $view = $this->viewsManager->load($view_id);
+@@ -172,7 +191,7 @@ class MetatagViewsEditForm extends FormBase {
+     // Set configuration values based on form submission. This always edits the
+     // original language.
+     $configuration = $this->configFactory()->getEditable($config_name);
+-    if (empty($this->removeEmptyTags($metatags))) {
++    if (empty($metatags)) {
+       $configuration->clear($config_path);
+     }
+     else {
+diff --git a/metatag_views/src/Form/MetatagViewsTranslationForm.php b/metatag_views/src/Form/MetatagViewsTranslationForm.php
+index 388562e..8a85eb2 100644
+--- a/metatag_views/src/Form/MetatagViewsTranslationForm.php
++++ b/metatag_views/src/Form/MetatagViewsTranslationForm.php
+@@ -10,7 +10,6 @@ use Drupal\metatag\MetatagTagPluginManager;
+ use Drupal\metatag\MetatagToken;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ use Drupal\language\ConfigurableLanguageManagerInterface;
+-use Drupal\metatag_views\MetatagViewsValuesCleanerTrait;
+ 
+ /**
+  * Class MetatagViewsEditForm.
+@@ -19,8 +18,6 @@ use Drupal\metatag_views\MetatagViewsValuesCleanerTrait;
+  */
+ class MetatagViewsTranslationForm extends FormBase {
+ 
+-  use MetatagViewsValuesCleanerTrait;
+-
+   /**
+    * Drupal\metatag\MetatagManager definition.
+    *
+@@ -46,6 +43,8 @@ class MetatagViewsTranslationForm extends FormBase {
+   protected $tokenService;
+ 
+   /**
++   * The plugin manager for metatag tags.
++   *
+    * @var \Drupal\metatag\MetatagTagPluginManager
+    */
+   protected $tagPluginManager;
+@@ -182,9 +181,21 @@ class MetatagViewsTranslationForm extends FormBase {
+    * Add the translation form element for metatags available in the source.
+    */
+   public function form(array $element, array $translated_values) {
+-    $translated_values = $this->clearMetatagViewsDisallowedValues($translated_values);
++    // Process submitted metatag values and remove empty tags.
++    $tag_values = [];
++    foreach ($translated_values as $tag_id => $tag_value) {
++      // Some plugins need to process form input before storing it.
++      // Hence, we set it and then get it.
++      $tag = $this->tagPluginManager->createInstance($tag_id);
++      $tag->setValue($tag_value);
++      if (!empty($tag->value())) {
++        $tag_values[$tag_id] = $tag->value();
++      }
++    }
++    $translated_values = $tag_values;
++
+     // Only offer form elements for tags present in the source language.
+-    $source_values = $this->removeEmptyTags($this->baseData);
++    $source_values = array_filter($this->baseData);
+ 
+     // Add the outer fieldset.
+     $element += [
+@@ -228,7 +239,7 @@ class MetatagViewsTranslationForm extends FormBase {
+ 
+     // Save the configuration values, if they are different from the source
+     // values in the base configuration. Otherwise remove the override.
+-    $source_values = $this->removeEmptyTags($base_config->get($config_path));
++    $source_values = $base_config->get($config_path);
+     if ($source_values !== $translated_values) {
+       $config_translation->set($config_path, $translated_values);
+     }
+diff --git a/metatag_views/src/MetatagViewsValuesCleanerTrait.php b/metatag_views/src/MetatagViewsValuesCleanerTrait.php
+deleted file mode 100644
+index a13f8a2..0000000
+--- a/metatag_views/src/MetatagViewsValuesCleanerTrait.php
++++ /dev/null
+@@ -1,44 +0,0 @@
+-<?php
+-
+-namespace Drupal\metatag_views;
+-
+-/**
+- * Collection of helper methods when handling raw tag values.
+- */
+-trait MetatagViewsValuesCleanerTrait {
+-
+-  /**
+-   * Clears the metatag form state values from illegal elements.
+-   *
+-   * @param array $metatags
+-   *   Array of values to submit.
+-   *
+-   * @return array
+-   *   Filtered metatag array.
+-   */
+-  public function clearMetatagViewsDisallowedValues(array $metatags) {
+-    // Get all legal tags.
+-    $tags = $this->metatagManager->sortedTags();
+-
+-    // Return only common elements.
+-    $metatags = array_intersect_key($metatags, $tags);
+-
+-    return $metatags;
+-  }
+-
+-  /**
+-   * Removes tags that are empty.
+-   */
+-  public function removeEmptyTags($metatags) {
+-    $metatags = array_filter($metatags, function ($value) {
+-      if (is_array($value)) {
+-        return count(array_filter($value)) > 0;
+-      }
+-      else {
+-        return $value !== '';
+-      }
+-    });
+-    return $metatags;
+-  }
+-
+-}
+diff --git a/metatag_views/tests/src/Functional/MetatagViewsBasicsTest.php b/metatag_views/tests/src/Functional/MetatagViewsBasicsTest.php
+index ed221c9..3aa3e80 100644
+--- a/metatag_views/tests/src/Functional/MetatagViewsBasicsTest.php
++++ b/metatag_views/tests/src/Functional/MetatagViewsBasicsTest.php
+@@ -131,6 +131,11 @@ class MetatagViewsBasicsTest extends BrowserTestBase {
+ 
+     // Confirm what the page title looks like now.
+     $this->assertTitle('Metatag title');
++
++    // Load the Metatag admin page to confirm it still works.
++    $this->drupalGet('admin/config/search/metatag');
++    $this->assertResponse(200);
++    $this->assertText('Add default meta tags');
+   }
+ 
+ }

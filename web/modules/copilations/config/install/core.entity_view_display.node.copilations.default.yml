@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.copilations.body
+    - field.field.node.copilations.comment_node_copilations
+    - field.field.node.copilations.field_codigo_playlist
+    - field.field.node.copilations.field_fecha_tema
+    - field.field.node.copilations.field_metaplaylist
+    - field.field.node.copilations.field_portada_track
+    - field.field.node.copilations.taxonomy_vocabulary_3
+    - node.type.copilations
+  module:
+    - image
+    - metatag
+    - text
+    - user
+id: node.copilations.default
+targetEntityType: node
+bundle: copilations
+mode: default
+content:
+  addtoany:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_codigo_playlist:
+    label: hidden
+    weight: 1
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_metaplaylist:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_portada_track:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  comment_node_copilations: true
+  field_fecha_tema: true
+  links: true
+  taxonomy_vocabulary_3: true

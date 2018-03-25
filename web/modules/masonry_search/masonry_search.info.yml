@@ -1,0 +1,13 @@
+name: Masonry Search
+type: module
+description: "Displays search results in a Masonry layout."
+# core: 8.x
+package: Masonry
+dependencies:
+  - masonry
+  - search
+# Information added by Drupal.org packaging script on 2016-02-22
+version: '8.x-1.0-rc2'
+core: '8.x'
+project: 'masonry_search'
+datestamp: 1456138166

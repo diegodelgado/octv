@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metas2
+    - node.type.noticias
+  module:
+    - metatag
+id: node.noticias.field_metas2
+field_name: field_metas2
+entity_type: node
+bundle: noticias
+label: metas
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

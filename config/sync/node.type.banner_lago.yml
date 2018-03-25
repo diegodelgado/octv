@@ -1,0 +1,29 @@
+uuid: 93f820b3-1267-4aac-bd17-928d06703c1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'banner lago'
+type: banner_lago
+description: 'Destacado de vídeos anteriores'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

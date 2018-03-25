@@ -1,0 +1,117 @@
+***************
+*** 4,9 ****
+  
+  use Drupal\Core\Controller\ControllerBase;
+  use Drupal\Core\Entity\EntityStorageInterface;
+  use Drupal\Core\Url;
+  use Drupal\metatag\MetatagManagerInterface;
+  use Drupal\views\Views;
+--- 4,10 ----
+  
+  use Drupal\Core\Controller\ControllerBase;
+  use Drupal\Core\Entity\EntityStorageInterface;
++ use Drupal\Core\Extension\ModuleHandlerInterface;
+  use Drupal\Core\Url;
+  use Drupal\metatag\MetatagManagerInterface;
+  use Drupal\views\Views;
+***************
+*** 26,31 ****
+     */
+    protected $metatagManager;
+  
+    /**
+     * Associative array of labels.
+     *
+--- 27,37 ----
+     */
+    protected $metatagManager;
+  
++   /**
++    * @var ModuleHandlerInterface
++    */
++   protected $moduleHandler;
++ 
+    /**
+     * Associative array of labels.
+     *
+***************
+*** 36,44 ****
+    /**
+     * {@inheritdoc}
+     */
+-   public function __construct(EntityStorageInterface $viewStorage, MetatagManagerInterface $metatagManager) {
+      $this->viewStorage = $viewStorage;
+      $this->metatagManager = $metatagManager;
+  
+      // Generate the labels for views and displays.
+      $this->labels = $this->getViewsAndDisplaysLabels();
+--- 42,51 ----
+    /**
+     * {@inheritdoc}
+     */
++   public function __construct(EntityStorageInterface $viewStorage, MetatagManagerInterface $metatagManager, ModuleHandlerInterface $module_handler) {
+      $this->viewStorage = $viewStorage;
+      $this->metatagManager = $metatagManager;
++     $this->moduleHandler = $module_handler;
+  
+      // Generate the labels for views and displays.
+      $this->labels = $this->getViewsAndDisplaysLabels();
+***************
+*** 50,56 ****
+    public static function create(ContainerInterface $container) {
+      return new static(
+        $container->get('entity_type.manager')->getStorage('view'),
+-       $container->get('metatag.manager')
+      );
+    }
+  
+--- 57,64 ----
+    public static function create(ContainerInterface $container) {
+      return new static(
+        $container->get('entity_type.manager')->getStorage('view'),
++       $container->get('metatag.manager'),
++       $container->get('module_handler')
+      );
+    }
+  
+***************
+*** 147,163 ****
+              'title' => t('Edit'),
+              'url' => Url::fromRoute('metatag_views.metatags.edit', $params),
+            ],
+-           'translate' => [
+-             'title' => t('Translate'),
+-             'url' => Url::fromRoute('metatag_views.metatags.translate_overview', $params),
+-           ],
+-           'revert' => [
+-             'title' => t('Revert'),
+-             'url' => Url::fromRoute('metatag_views.metatags.revert', $params),
+-           ],
+          ],
+        ];
+  
+        // Build the rows for each of the metatag types.
+        $element[$display_id]['details']['table'] = $this->buildDisplayDetailsTable($metatags);
+      }
+--- 155,175 ----
+              'title' => t('Edit'),
+              'url' => Url::fromRoute('metatag_views.metatags.edit', $params),
+            ],
+          ],
+        ];
+  
++       if ($this->moduleHandler->moduleExists('config_translation')) {
++         $element[$display_id]['ops']['#links']['translate'] = [
++           'title' => t('Translate'),
++           'url' => Url::fromRoute('metatag_views.metatags.translate_overview', $params),
++         ];
++       }
++ 
++       $element[$display_id]['ops']['#links']['revert'] = [
++         'title' => t('Revert'),
++         'url' => Url::fromRoute('metatag_views.metatags.revert', $params),
++       ];
++ 
+        // Build the rows for each of the metatag types.
+        $element[$display_id]['details']['table'] = $this->buildDisplayDetailsTable($metatags);
+      }

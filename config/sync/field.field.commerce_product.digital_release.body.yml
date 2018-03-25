@@ -1,0 +1,22 @@
+uuid: f16f2907-b626-4ca9-9c0b-a37366f98810
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.digital_release
+    - field.storage.commerce_product.body
+  module:
+    - text
+id: commerce_product.digital_release.body
+field_name: body
+entity_type: commerce_product
+bundle: digital_release
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: false
+field_type: text_with_summary

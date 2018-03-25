@@ -1,0 +1,41 @@
+uuid: d90973d9-effa-46d7-b124-f7ae5036f9ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.digital_release
+    - field.storage.commerce_product.field_embed
+  module:
+    - better_formats
+    - text
+third_party_settings:
+  better_formats:
+    allowed_formats_toggle: 1
+    allowed_formats:
+      codigo: codigo
+      basic_html: 0
+      restricted_html: 0
+      full_html: 0
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '0'
+        codigo:
+          weight: '0'
+        restricted_html:
+          weight: '0'
+        full_html:
+          weight: '1'
+id: commerce_product.digital_release.field_embed
+field_name: field_embed
+entity_type: commerce_product
+bundle: digital_release
+label: embed
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

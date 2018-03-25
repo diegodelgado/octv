@@ -1,0 +1,55 @@
+uuid: 8898bd22-5e1b-49c5-b0e0-f54578f5cf2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery.body
+    - field.field.node.gallery.field_fecha
+    - field.field.node.gallery.field_fotos_galeria
+    - field.field.node.gallery.field_portada_galeria
+    - field.field.node.gallery.field_tags
+    - node.type.gallery
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.gallery.default
+targetEntityType: node
+bundle: gallery
+mode: default
+content:
+  addtoany:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fecha:
+    weight: 0
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_fotos_galeria:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_portada_galeria: true
+  field_tags: true
+  links: true

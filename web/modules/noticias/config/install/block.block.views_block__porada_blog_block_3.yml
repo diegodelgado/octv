@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.porada_blog
+  module:
+    - node
+    - views
+  theme:
+    - octb
+id: views_block__porada_blog_block_3
+theme: octb
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:porada_blog-block_3'
+settings:
+  id: 'views_block:porada_blog-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      noticias: noticias
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,30 @@
+uuid: 34f0e6a3-b033-489e-a553-678147e37323
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.video_portada
+  module:
+    - system
+    - views
+  theme:
+    - octb
+id: views_block__video_portada_block_1
+theme: octb
+region: content
+weight: -15
+provider: null
+plugin: 'views_block:video_portada-block_1'
+settings:
+  id: 'views_block:video_portada-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

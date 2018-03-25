@@ -1,0 +1,22 @@
+uuid: 55b97acd-079d-4cc6-bd27-aabcbbce074e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - octb
+_core:
+  default_config_hash: wa9uqvnXv4mJoVM-jjAjFS8T5x_qJ9DWrTP2Tkf4LF4
+id: octb_local_tasks
+theme: octb
+region: content
+weight: -12
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

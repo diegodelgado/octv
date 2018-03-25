@@ -1,0 +1,24 @@
+uuid: 3f750a0b-720f-4a40-a7da-9ba7e4ca0511
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.digital_release
+    - commerce_product.commerce_product_variation_type.digital
+    - field.storage.commerce_product.variations
+id: commerce_product.digital_release.variations
+field_name: variations
+entity_type: commerce_product
+bundle: digital_release
+label: Variations
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  handler: 'default:commerce_product_variation'
+  handler_settings:
+    target_bundles:
+      - digital
+field_type: entity_reference

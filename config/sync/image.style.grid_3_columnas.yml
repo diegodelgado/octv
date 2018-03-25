@@ -1,0 +1,14 @@
+uuid: cebff787-9090-45b3-a268-66d1debaa6db
+langcode: en
+status: true
+dependencies: {  }
+name: grid_3_columnas
+label: 'grid 3 columnas'
+effects:
+  ef29960a-1d92-4751-843a-992e1c4582fd:
+    uuid: ef29960a-1d92-4751-843a-992e1c4582fd
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 384

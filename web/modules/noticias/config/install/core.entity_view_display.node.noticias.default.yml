@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.noticias.body
+    - field.field.node.noticias.field_embed_music
+    - field.field.node.noticias.field_fecha_tema
+    - field.field.node.noticias.field_hoy_recomendamos
+    - field.field.node.noticias.field_imagen_news
+    - field.field.node.noticias.field_metas2
+    - field.field.node.noticias.field_textovideo
+    - field.field.node.noticias.field_tipo_de_blog
+    - field.field.node.noticias.taxonomy_vocabulary_3
+    - node.type.noticias
+  module:
+    - metatag
+    - text
+    - user
+id: node.noticias.default
+targetEntityType: node
+bundle: noticias
+mode: default
+content:
+  field_metas2:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_textovideo:
+    label: hidden
+    weight: 0
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  comment_node_noticias: true
+  field_embed_music: true
+  field_fecha_tema: true
+  field_hoy_recomendamos: true
+  field_imagen_news: true
+  field_tipo_de_blog: true
+  taxonomy_vocabulary_3: true

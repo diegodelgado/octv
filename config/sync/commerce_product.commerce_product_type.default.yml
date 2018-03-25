@@ -1,0 +1,13 @@
+uuid: 18432d9a-d089-4e3e-8f9c-daee952bd42a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 5TqAuVTl1_arKIBeD1qDfJM-pKmaFnqyYSQNdwEK_DQ
+id: default
+label: 'Physical release'
+description: ''
+variationType: default
+injectVariationFields: true
+traits: {  }
+locked: false

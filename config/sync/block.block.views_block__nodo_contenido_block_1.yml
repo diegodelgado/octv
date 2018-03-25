@@ -1,0 +1,33 @@
+uuid: 853f3eb7-70e2-442a-898e-fb4f9df338af
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.nodo_contenido
+  module:
+    - node
+    - views
+  theme:
+    - octb
+id: views_block__nodo_contenido_block_1
+theme: octb
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:nodo_contenido-block_1'
+settings:
+  id: 'views_block:nodo_contenido-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      blog: blog
+      octubretv_videos: octubretv_videos
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

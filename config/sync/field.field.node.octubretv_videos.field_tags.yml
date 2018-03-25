@@ -1,0 +1,29 @@
+uuid: 0025c6ce-d652-4b44-af88-53af4ff093f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.octubretv_videos
+    - taxonomy.vocabulary.tags
+id: node.octubretv_videos.field_tags
+field_name: field_tags
+entity_type: node
+bundle: octubretv_videos
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

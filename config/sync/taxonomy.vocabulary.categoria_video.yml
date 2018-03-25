@@ -1,0 +1,9 @@
+uuid: 20351f26-7a9e-4869-9d3b-9a265c777208
+langcode: en
+status: true
+dependencies: {  }
+name: 'Categoría vídeo'
+vid: categoria_video
+description: ''
+hierarchy: 0
+weight: 0

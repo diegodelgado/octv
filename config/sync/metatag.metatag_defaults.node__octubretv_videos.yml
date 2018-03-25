@@ -1,0 +1,14 @@
+uuid: 3473fd73-a93c-43cc-bbda-4bedf6c3bd51
+langcode: en
+status: true
+dependencies: {  }
+id: node__octubretv_videos
+label: 'Content: Octubretv videos'
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:body]'
+  og_image_width: '530'
+  og_image: '[node:field_imagenes_portada]'
+  og_image_url: '[node:field_imagenes_portada]'
+  og_image_height: '330'
+  og_description: '[node:body]'

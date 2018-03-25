@@ -1,0 +1,22 @@
+uuid: 01e88225-cc40-48f5-807f-21fa52ed17ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - octb
+_core:
+  default_config_hash: bo57B-0Dlmgas566sPAqINsWckg_BEFyFPXrH9_9Em0
+id: octb_help
+theme: octb
+region: content
+weight: -11
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'tipo de blog'
+vid: tipo_de_blog
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,22 @@
+uuid: 3dc7c885-1dd6-48f8-ae94-4bfed3717394
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: videos
+label: videos
+type: 'canonical_entities:node'
+pattern: 'videos/[node:title]'
+selection_criteria:
+  b4b46317-e19b-42b9-83b2-24fe2bf8c2eb:
+    id: node_type
+    bundles:
+      octubretv_videos: octubretv_videos
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b4b46317-e19b-42b9-83b2-24fe2bf8c2eb
+selection_logic: and
+weight: -5
+relationships: {  }

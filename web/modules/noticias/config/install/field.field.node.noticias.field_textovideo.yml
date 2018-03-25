@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_textovideo
+    - node.type.noticias
+  module:
+    - text
+id: node.noticias.field_textovideo
+field_name: field_textovideo
+entity_type: node
+bundle: noticias
+label: textovideo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

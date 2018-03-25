@@ -1,0 +1,26 @@
+uuid: f6af50a7-569b-405f-b0ad-978cecd2d509
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: q0T0acNhzjnLbPpoVExGs9VZWeivOxB0MpgsxvdPcEg
+id: octb_main_menu
+theme: octb
+region: navbar
+weight: -11
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main menu'
+  provider: system
+  label_display: '1'
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: e6f5b962-41a8-4c7c-b210-c943205b766b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: FfCSERSFYF1557mpHqSMcNHWFop3T4_sx545nnXww2c
+id: octb_messages
+theme: octb
+region: highlighted
+weight: -13
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

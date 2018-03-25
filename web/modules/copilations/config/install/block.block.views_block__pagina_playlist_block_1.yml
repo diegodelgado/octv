@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.pagina_playlist
+  module:
+    - node
+    - views
+  theme:
+    - octb
+id: views_block__pagina_playlist_block_1
+theme: octb
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:pagina_playlist-block_1'
+settings:
+  id: 'views_block:pagina_playlist-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      copilations: copilations
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

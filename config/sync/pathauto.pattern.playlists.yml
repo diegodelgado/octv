@@ -1,0 +1,22 @@
+uuid: a9490425-90df-4157-8b4b-c19c17f71c42
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: playlists
+label: playlists
+type: 'canonical_entities:node'
+pattern: 'playlists/[node:title]'
+selection_criteria:
+  01a6ceea-09da-440a-a1d0-ba097c26c713:
+    id: node_type
+    bundles:
+      playlist: playlist
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 01a6ceea-09da-440a-a1d0-ba097c26c713
+selection_logic: and
+weight: -5
+relationships: {  }

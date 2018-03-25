@@ -1,0 +1,41 @@
+uuid: 0a4627db-5cb3-4d39-afe8-c0b9da78fe3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_embed_music
+    - node.type.blog
+  module:
+    - better_formats
+    - text
+third_party_settings:
+  better_formats:
+    allowed_formats_toggle: 1
+    allowed_formats:
+      codigo: codigo
+      basic_html: 0
+      restricted_html: 0
+      full_html: 0
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        basic_html:
+          weight: '0'
+        codigo:
+          weight: '0'
+        restricted_html:
+          weight: '0'
+        full_html:
+          weight: '1'
+id: node.blog.field_embed_music
+field_name: field_embed_music
+entity_type: node
+bundle: blog
+label: 'embed music'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

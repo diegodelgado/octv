@@ -1,0 +1,11 @@
+name: Masonry API
+type: module
+description: "Provides an API for integrating the jQuery Masonry plugin with Drupal."
+# core: 8.x
+package: Masonry
+
+# Information added by Drupal.org packaging script on 2017-08-11
+version: '8.x-1.0-rc2+8-dev'
+core: '8.x'
+project: 'masonry'
+datestamp: 1502469246

@@ -1,0 +1,22 @@
+/**
+ * Menus in the navbar region.
+ ============================================================================ */
+
+// Region or row specific menu overrides
+.pr-navbar__navbar {
+  // Horizontal navbar menu by default. This will only appply to non-responsive
+  // menus (those not using the Responsive Menus extension).
+  .block-menu {
+    margin: 0;
+
+    .menu a:after {
+      content: none;
+      display: none;
+    }
+
+    .menu-level-1 {
+      @include list-horizontal($flow-from, $margin: (t: $xxx-small, r: $medium, b: $xxx-small, l: 0), $list-item-selector: '.menu__item');
+    }
+  }
+}
+

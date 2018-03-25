@@ -1,0 +1,9 @@
+uuid: b1d3dabe-c325-4d86-8430-a28fc393837d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tipo de blog'
+vid: tipo_de_blog
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,12 @@
+uuid: 0fc2134b-6a99-4ef0-b579-0cc3f91621b6
+langcode: en
+status: true
+dependencies: {  }
+id: node__playlist
+label: 'Content: Playlist'
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:body]'
+  og_image: '[node:field_portada_track]'
+  og_image_url: '[node:field_portada_track]'
+  og_description: '[node:body]'

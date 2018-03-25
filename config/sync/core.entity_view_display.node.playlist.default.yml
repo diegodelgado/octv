@@ -1,0 +1,46 @@
+uuid: 31609bcf-5117-43de-9da3-c4d8be1a154a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.playlist.body
+    - field.field.node.playlist.field_codigo_playlist
+    - field.field.node.playlist.field_fecha
+    - field.field.node.playlist.field_portada_track
+    - field.field.node.playlist.field_tags
+    - node.type.playlist
+  module:
+    - image
+    - text
+    - user
+id: node.playlist.default
+targetEntityType: node
+bundle: playlist
+mode: default
+content:
+  addtoany:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_codigo_playlist:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_portada_track:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  body: true
+  field_fecha: true
+  field_tags: true
+  links: true

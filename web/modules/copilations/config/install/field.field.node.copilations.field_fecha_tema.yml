@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_tema
+    - node.type.copilations
+  module:
+    - datetime
+id: node.copilations.field_fecha_tema
+field_name: field_fecha_tema
+entity_type: node
+bundle: copilations
+label: fecha
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

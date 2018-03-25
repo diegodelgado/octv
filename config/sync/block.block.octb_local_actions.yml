@@ -1,0 +1,20 @@
+uuid: 43657440-1df1-4f51-b0e1-4bd03baf8143
+langcode: en
+status: true
+dependencies:
+  theme:
+    - octb
+_core:
+  default_config_hash: tBelT4lJtoDsuGI3RqF8oneTHhb0xXCh-k2BCicdTr8
+id: octb_local_actions
+theme: octb
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

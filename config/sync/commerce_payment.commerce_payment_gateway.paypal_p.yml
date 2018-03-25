@@ -1,0 +1,22 @@
+uuid: f7844267-f535-4286-8fcb-cec866f12c75
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_paypal
+id: paypal_p
+label: 'Paypal p'
+weight: null
+plugin: paypal_express_checkout
+configuration:
+  api_username: info-facilitator_api1.octubre.tv
+  api_password: KMHY3XGQCGU78Z7J
+  shipping_prompt: shipping_skip
+  signature: AFcWxV21C7fd0v3bYYYRCpSSRl31AhNKDt.m9KPyL9jq9DJmDlOvxW9v
+  solution_type: SoleLogin
+  display_label: 'PayPal prueba'
+  mode: test
+  payment_method_types:
+    - credit_card
+conditions: {  }
+conditionOperator: AND

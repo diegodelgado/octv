@@ -1,0 +1,24 @@
+uuid: e4f06bac-d887-4b3e-8fb0-5fedabc8ae61
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - ctools
+id: producto
+label: producto
+type: 'canonical_entities:commerce_product'
+pattern: 'ediciones/[commerce_product:title]'
+selection_criteria:
+  e6cd6e8d-29b9-438e-80a6-9d6fb3787a92:
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      default: default
+      digital_release: digital_release
+    negate: false
+    context_mapping:
+      commerce_product: commerce_product
+    uuid: e6cd6e8d-29b9-438e-80a6-9d6fb3787a92
+selection_logic: and
+weight: -5
+relationships: {  }

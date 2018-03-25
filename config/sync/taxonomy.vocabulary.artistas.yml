@@ -1,0 +1,9 @@
+uuid: b8a86910-9649-4b3e-b081-7b5f59eaf8e9
+langcode: en
+status: true
+dependencies: {  }
+name: Artistas
+vid: artistas
+description: ''
+hierarchy: 0
+weight: 0

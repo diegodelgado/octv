@@ -1,0 +1,31 @@
+uuid: 49c3ca12-5dfa-49f9-ab7b-a97388d8d755
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - octb
+_core:
+  default_config_hash: bFE_p8-dLOjB1vE7f1lgM1vQcGCUD75f1BPrIJ1fp_I
+id: octb_account_menu
+theme: octb
+region: navbar
+weight: -12
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility:
+  request_path:
+    id: request_path
+    pages: "/ediciones*\r\n/checkout*"
+    negate: false
+    context_mapping: {  }

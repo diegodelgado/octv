@@ -1,0 +1,22 @@
+uuid: 52ba916d-33cf-4d5b-9e7a-19c0c84abd3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: paginas
+label: páginas
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  5630721a-7267-4938-8039-571c754e6f25:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5630721a-7267-4938-8039-571c754e6f25
+selection_logic: and
+weight: -5
+relationships: {  }

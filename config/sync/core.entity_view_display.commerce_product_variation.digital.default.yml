@@ -1,0 +1,28 @@
+uuid: bf10e760-04c6-40b4-8177-a28667509264
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.digital
+    - field.field.commerce_product_variation.digital.field_imagen_producto
+  module:
+    - image
+id: commerce_product_variation.digital.default
+targetEntityType: commerce_product_variation
+bundle: digital
+mode: default
+content:
+  field_imagen_producto:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  price: true
+  product_id: true
+  sku: true
+  title: true
