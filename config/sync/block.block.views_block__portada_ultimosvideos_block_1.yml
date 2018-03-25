@@ -12,7 +12,7 @@ dependencies:
 id: views_block__portada_ultimosvideos_block_1
 theme: octb
 region: content
-weight: -14
+weight: -15
 provider: null
 plugin: 'views_block:portada_ultimosvideos-block_1'
 settings:

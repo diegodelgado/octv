@@ -1,4 +1,4 @@
-uuid: 1932df83-b53b-4410-b101-36482b33ad58
+uuid: 0f9d62c4-eee6-4a16-b132-9d57176dc290
 langcode: en
 status: true
 dependencies:
@@ -24,12 +24,16 @@ configuration:
       step: order_information
       weight: 1
     payment_information:
+      reuse_profile: true
+      reuse_profile_label: 'My shipping address is the same as my billing address.'
+      reuse_profile_default: false
       step: order_information
-      weight: 2
+      weight: 3
+      require_shipping_profile: true
     shipping_information:
       require_shipping_profile: true
       step: order_information
-      weight: 3
+      weight: 2
     review:
       step: review
       weight: 4
@@ -37,15 +41,14 @@ configuration:
       capture: true
       step: payment
       weight: 5
-    coupon_redemption:
-      allow_multiple: false
-      step: payment
-      weight: 5
-      capture: true
     completion_message:
       step: complete
       weight: 6
     order_summary:
       view: commerce_checkout_order_summary
+      step: _sidebar
+      weight: 7
+    coupon_redemption:
+      allow_multiple: false
       step: _sidebar
       weight: 8

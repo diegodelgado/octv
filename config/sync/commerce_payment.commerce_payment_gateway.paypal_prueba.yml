@@ -1,11 +1,11 @@
-uuid: f7844267-f535-4286-8fcb-cec866f12c75
+uuid: ddf573d9-33e2-4077-b6a5-1fd50c07576f
 langcode: en
 status: true
 dependencies:
   module:
     - commerce_paypal
-id: paypal_p
-label: 'Paypal p'
+id: paypal_prueba
+label: 'Paypal prueba'
 weight: null
 plugin: paypal_express_checkout
 configuration:

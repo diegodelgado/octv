@@ -8,12 +8,12 @@ dependencies:
 _core:
   default_config_hash: PZl4AQDUouSVwavb0FNRlcbJx924n5FtCq8l73AMj5g
 id: customer
-label: address
+label: 'Personal information'
 registration: false
 multiple: true
 roles:
   authenticated: '0'
   administrator: '0'
 weight: 0
-use_revisions: false
+use_revisions: true
 description: ''

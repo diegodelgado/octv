@@ -9,7 +9,7 @@ _core:
 id: octb_local_tasks
 theme: octb
 region: content
-weight: -12
+weight: -11
 provider: null
 plugin: local_tasks_block
 settings:

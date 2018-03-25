@@ -12,7 +12,7 @@ dependencies:
 id: views_block__ediciones_block_2
 theme: octb
 region: content
-weight: -7
+weight: -6
 provider: null
 plugin: 'views_block:ediciones-block_2'
 settings:

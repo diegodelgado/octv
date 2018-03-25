@@ -12,7 +12,7 @@ dependencies:
 id: views_block__edicionesdig_block_2
 theme: octb
 region: content
-weight: -6
+weight: -5
 provider: null
 plugin: 'views_block:edicionesdig-block_2'
 settings:

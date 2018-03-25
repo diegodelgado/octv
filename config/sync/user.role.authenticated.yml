@@ -18,5 +18,8 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'subscribe to newsletters'
+  - 'update commerce_shipping_method'
   - 'view commerce_product'
+  - 'view commerce_promotion'
+  - 'view commerce_shipping_method'
   - 'view own commerce_order'

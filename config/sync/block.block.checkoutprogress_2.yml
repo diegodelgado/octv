@@ -1,0 +1,20 @@
+uuid: c0cf50b1-49e5-4651-bbb8-5e7800717f19
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_checkout
+  theme:
+    - octb
+id: checkoutprogress_2
+theme: octb
+region: content
+weight: -12
+provider: null
+plugin: commerce_checkout_progress
+settings:
+  id: commerce_checkout_progress
+  label: 'Checkout progress'
+  provider: commerce_checkout
+  label_display: '0'
+visibility: {  }

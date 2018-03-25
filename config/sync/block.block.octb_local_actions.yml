@@ -9,7 +9,7 @@ _core:
 id: octb_local_actions
 theme: octb
 region: content
-weight: -10
+weight: -9
 provider: null
 plugin: local_actions_block
 settings:

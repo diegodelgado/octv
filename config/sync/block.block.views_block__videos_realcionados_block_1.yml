@@ -11,7 +11,7 @@ dependencies:
 id: views_block__videos_realcionados_block_1
 theme: octb
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: 'views_block:videos_realcionados-block_1'
 settings:

@@ -12,7 +12,7 @@ dependencies:
 id: views_block__banner_largo_block_1
 theme: octb
 region: content
-weight: -2
+weight: -1
 provider: null
 plugin: 'views_block:banner_largo-block_1'
 settings:

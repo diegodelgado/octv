@@ -1,0 +1,28 @@
+uuid: fce82c74-d9ef-4c8f-a4da-0a8f1f3d690e
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.profile.token
+    - field.field.profile.customer.address
+    - profile.type.customer
+  enforced:
+    module:
+      - commerce_order
+  module:
+    - address
+_core:
+  default_config_hash: '-D8G44VGLIAIFvoHm_u7-Awnie4iCenOWfldrpNy_ys'
+id: profile.customer.token
+targetEntityType: profile
+bundle: customer
+mode: token
+content:
+  address:
+    type: address_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

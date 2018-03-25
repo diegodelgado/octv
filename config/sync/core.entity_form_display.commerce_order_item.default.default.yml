@@ -8,6 +8,7 @@ dependencies:
     module:
       - commerce_product
   module:
+    - commerce
     - commerce_order
 _core:
   default_config_hash: AI9120ApX7uexCUMTuO3RgE5bWu8175i_bNlPMRXe7M
@@ -17,12 +18,13 @@ bundle: default
 mode: default
 content:
   purchased_entity:
-    type: entity_reference_autocomplete
+    type: commerce_entity_select
     weight: 0
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      hide_single_entity: true
+      autocomplete_threshold: 7
+      autocomplete_size: 60
+      autocomplete_placeholder: ''
     third_party_settings: {  }
     region: content
   quantity:

@@ -12,7 +12,7 @@ dependencies:
 id: views_block__nodo_contenido_block_1
 theme: octb
 region: content
-weight: -8
+weight: -7
 provider: null
 plugin: 'views_block:nodo_contenido-block_1'
 settings:
