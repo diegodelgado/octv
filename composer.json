@@ -37,6 +37,7 @@
         "drupal/commerce_fedex": "^1.0",
         "drupal/commerce_paypal": "1.x-dev",
         "drupal/commerce_shipping": "2.x-dev",
+        "drupal/config_installer": "^1.7",
         "drupal/console": "~1.0",
         "drupal/core": "~8.4",
         "drupal/entity": "^1.0",
