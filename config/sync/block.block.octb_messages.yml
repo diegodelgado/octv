@@ -10,8 +10,8 @@ _core:
   default_config_hash: FfCSERSFYF1557mpHqSMcNHWFop3T4_sx545nnXww2c
 id: octb_messages
 theme: octb
-region: highlighted
-weight: -13
+region: content_prefix
+weight: -15
 provider: null
 plugin: system_messages_block
 settings:

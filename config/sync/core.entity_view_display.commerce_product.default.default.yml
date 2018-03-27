@@ -6,6 +6,7 @@ dependencies:
     - commerce_product.commerce_product_type.default
     - field.field.commerce_product.default.body
     - field.field.commerce_product.default.field_embed
+    - field.field.commerce_product.default.field_imagen_social
     - field.field.commerce_product.default.field_links
     - field.field.commerce_product.default.field_released
     - field.field.commerce_product.default.field_tags
@@ -25,20 +26,20 @@ mode: default
 content:
   body:
     type: text_default
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     region: content
   field_embed:
-    weight: 5
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_links:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -50,7 +51,7 @@ content:
     type: link
     region: content
   field_released:
-    weight: 4
+    weight: 5
     label: inline
     settings:
       timezone_override: ''
@@ -59,7 +60,7 @@ content:
     type: datetime_default
     region: content
   field_tags:
-    weight: 2
+    weight: 3
     label: above
     settings:
       link: true
@@ -69,14 +70,14 @@ content:
   title:
     label: hidden
     type: string
-    weight: -5
+    weight: 0
     region: content
     settings:
       link_to_entity: false
     third_party_settings: {  }
   variations:
     type: commerce_add_to_cart
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       combine: true
@@ -84,5 +85,6 @@ content:
     region: content
 hidden:
   created: true
+  field_imagen_social: true
   stores: true
   uid: true

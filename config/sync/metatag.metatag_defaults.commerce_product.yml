@@ -1,0 +1,13 @@
+uuid: 42ac4427-c249-44db-8177-509a8b3d1588
+langcode: en
+status: true
+dependencies: {  }
+id: commerce_product
+label: Product
+tags:
+  title: '[commerce_product:title]'
+  keywords: 'sello de música independiente barcelona, sello de música independiente, sello barcelona dark wave, sello barcelona música electronica, independent music label berlin, dark wave, shoe gaze, noise pop, dream pop, music label berlin, shoegaze music label, po'
+  og_image: '[commerce_product:field_imagen_social]'
+  og_image_url: '[commerce_product:field_imagen_social]'
+  og_image_height: '900'
+  og_image_width: '1200'

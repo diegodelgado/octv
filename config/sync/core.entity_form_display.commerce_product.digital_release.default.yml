@@ -6,14 +6,17 @@ dependencies:
     - commerce_product.commerce_product_type.digital_release
     - field.field.commerce_product.digital_release.body
     - field.field.commerce_product.digital_release.field_embed
+    - field.field.commerce_product.digital_release.field_imagen_social
     - field.field.commerce_product.digital_release.field_links
     - field.field.commerce_product.digital_release.field_released
     - field.field.commerce_product.digital_release.field_tags
     - field.field.commerce_product.digital_release.stores
     - field.field.commerce_product.digital_release.variations
+    - image.style.thumbnail
   module:
     - commerce
     - datetime
+    - image
     - inline_entity_form
     - link
     - path
@@ -45,6 +48,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_imagen_social:
+    weight: 95
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   field_links:
     weight: 93

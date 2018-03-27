@@ -6,6 +6,7 @@ dependencies:
     - commerce_product.commerce_product_type.digital_release
     - field.field.commerce_product.digital_release.body
     - field.field.commerce_product.digital_release.field_embed
+    - field.field.commerce_product.digital_release.field_imagen_social
     - field.field.commerce_product.digital_release.field_links
     - field.field.commerce_product.digital_release.field_released
     - field.field.commerce_product.digital_release.field_tags
@@ -73,6 +74,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_imagen_social: true
   stores: true
   uid: true
   variations: true

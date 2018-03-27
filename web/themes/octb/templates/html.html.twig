@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+{{- attach_library('at_core/at.fastclick_initialize') -}}
+{{- attach_library('at_core/at.breakpoints') -}}
+<!DOCTYPE html>
+<html{{ html_attributes.addClass('no-js', 'adaptivetheme') }}>
+  <head>
+    {{ touch_icons }}
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    {%- if google_dns_prefetch -%}
+      <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    {%- endif -%}
+    {%- if typekit_dns_prefetch -%}
+      <link rel="dns-prefetch" href="//use.typekit.net">
+    {%- endif -%}
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+    
+    <!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1421343707970827');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1421343707970827&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+    
+  </head>
+  {%-
+    set body_classes = [
+      logged_in ? 'user-logged-in' : 'user-logged-out',
+      is_front ? 'path-frontpage' : 'path-not-frontpage',
+      root_path ? 'path-' ~ root_path|clean_class,
+      path_info.args ? 'path-' ~ path_info.args,
+      path_info.query ? 'path-query-' ~ path_info.query,
+      node_type ? 'page-node-type--' ~ node_type|clean_class,
+      head_title_array.name ? 'site-name--' ~ head_title_array.name|clean_class,
+      theme.name ? 'theme-name--' ~ theme.name|clean_class,
+      db_offline ? 'db-offline',
+    ]
+  -%}
+  <body role="document"{{ attributes.addClass(body_classes)|without('role') }}>
+    {# Keyboard navigation/accessibility links to content in page.html.twig. #}
+    <a href="{{ skip_link_target }}" class="visually-hidden focusable skip-link">{{ 'Skip to main content'|t }}</a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>
