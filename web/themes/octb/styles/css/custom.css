@@ -589,7 +589,7 @@ z-index: 3;
   border: 7px solid black;
 }
 
- 
+
 
   /* BLOG */
 
@@ -936,6 +936,21 @@ h1.page__title {
 	}
 
 
+@media only screen and (max-width: 340px) {
+
+    .view-id-video_portada .views-field-field-imagenes-portada .play-icon a {
+      background-size: 50px !important;
+
+    }
+    ul.menusocial li a {
+      font-size: 18px !important;
+      margin-right: 2px;
+    }
+  }
+
+
+
+
 @media (max-width: 1090px) {
 
 #block-octubre-menu ul.menu {
@@ -1025,8 +1040,6 @@ h1.page__title {
 	  }
 	}
 
-
-
 }
 
 
@@ -1106,10 +1119,10 @@ h1.page__title {
 html .messages {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	
+
 	background-color: #ffdeda;
 	border: none;
- 
+
 
 }
 
@@ -1290,12 +1303,12 @@ html .messages {
 
 .path-ediciones #content-prefix, .path-product #content-prefix, .path-checkout #content-prefix, .path-user #content-prefix {
 	padding-top: 130px;
-	
+
 
 }
 
 #main-content {
- 
+
 
 
 
@@ -1308,7 +1321,7 @@ html .messages {
 
 
 
- 
+
 
 
 
@@ -1613,7 +1626,7 @@ li.checkout-progress--step__current {
 #block-octb-local-tasks ul li.tabs__tab {
 	margin-right: 10px !important;
 	margin-bottom: 10px !important;
-	
+
 }
 
 #block-octb-local-tasks ul li.tabs__tab a {
@@ -1624,13 +1637,13 @@ li.checkout-progress--step__current {
 
 #block-octb-local-tasks ul li.tabs__tab a:hover {
 	color: white !important;
-	
+
 	background-color: #949fa5 !important;
 }
 
 #block-octb-local-tasks ul li.tabs__tab.tabs__tab--is-active a {
 	color: white !important;
-	
+
 	border: none !important;
 	background-color: #949fa5 !important;
 }
@@ -1661,7 +1674,7 @@ li.checkout-progress--step__current {
 .simplenews-subscriptions-block-e42fac5d-d0d8-4c69-a658-99fdf514c56b {
 	margin-left: 20px;
 	margin-right: 20px;
-	
+
 }
 
 .simplenews-subscriptions-block-e42fac5d-d0d8-4c69-a658-99fdf514c56b .block__inner {
@@ -1670,8 +1683,8 @@ li.checkout-progress--step__current {
     margin-right: auto;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	
-	
+
+
 }
 
 .simplenews-subscriptions-block-e42fac5d-d0d8-4c69-a658-99fdf514c56b #edit-message {
@@ -1680,15 +1693,15 @@ li.checkout-progress--step__current {
     text-transform: uppercase;
     font-size: 50px;
     line-height: 50px;
-	
+
 }
 
 
 /*MAIL CHIMP NEWSLETTER */
 
 #block-newsletter {
-	
-	
+
+
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 0px;
@@ -1699,7 +1712,7 @@ li.checkout-progress--step__current {
 	max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-	
+
 }
 
 #block-newsletter h2 {
@@ -1707,12 +1720,12 @@ li.checkout-progress--step__current {
 	font-size: 30px !important;
 	font-family: 'Work Sans', sans-serif !important;
     font-weight: 700 !important;
-	
+
 }
 #mc_embed_signup_scroll {
-	
-	
-	
+
+
+
 }
 
 #mc-embedded-subscribe {
@@ -1726,5 +1739,3 @@ li.checkout-progress--step__current {
     padding: 0px 5px 30px 5px !important;
     border-radius: 0px !important;
 }
-
- 
