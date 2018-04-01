@@ -4,7 +4,6 @@ namespace Drupal\metatag_views\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Url;
 use Drupal\metatag\MetatagManagerInterface;
 use Drupal\views\Views;
@@ -28,11 +27,6 @@ class MetatagViewsController extends ControllerBase {
   protected $metatagManager;
 
   /**
-   * @var ModuleHandlerInterface
-   */
-  protected $moduleHandler;
-
-  /**
    * Associative array of labels.
    *
    * @var array
@@ -42,10 +36,9 @@ class MetatagViewsController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function __construct(EntityStorageInterface $viewStorage, MetatagManagerInterface $metatagManager, ModuleHandlerInterface $module_handler) {
+  public function __construct(EntityStorageInterface $viewStorage, MetatagManagerInterface $metatagManager) {
     $this->viewStorage = $viewStorage;
     $this->metatagManager = $metatagManager;
-    $this->moduleHandler = $module_handler;
 
     // Generate the labels for views and displays.
     $this->labels = $this->getViewsAndDisplaysLabels();
@@ -57,13 +50,12 @@ class MetatagViewsController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager')->getStorage('view'),
-      $container->get('metatag.manager'),
-      $container->get('module_handler')
+      $container->get('metatag.manager')
     );
   }
 
   /**
-   * Get metatags for all of the views / displays that have them set.
+   * Get meta tags for all of the views / displays that have them set.
    *
    * @return array
    *   List of tags grouped by view and display.
@@ -82,7 +74,7 @@ class MetatagViewsController extends ControllerBase {
   }
 
   /**
-   * Generates the renderable array for views metatags UI.
+   * Generates the renderable array for views meta tags UI.
    *
    * @return array
    *   Thelist of details.
@@ -91,7 +83,7 @@ class MetatagViewsController extends ControllerBase {
     $elements = [];
 
     $elements['header'] = [
-      '#markup' => '<p>' . t("To view a list of displays with meta tags set up, click on a view name. To view a summary of meta tags configuration for a particular display, click on the display name. If you need to set metatags for a specific view, choose Add views meta tags. Reverting the meta tags removes the specific configuration and falls back to defaults.") . '</p>',
+      '#markup' => '<p>' . t("To view a list of displays with meta tags set up, click on a view name. To view a summary of meta tags configuration for a particular display, click on the display name. If you need to set meta tags for a specific view, choose Add views meta tags. Reverting the meta tags removes the specific configuration and falls back to defaults.") . '</p>',
     ];
 
     // Iterate over the values and build the whole UI.
@@ -155,19 +147,15 @@ class MetatagViewsController extends ControllerBase {
             'title' => t('Edit'),
             'url' => Url::fromRoute('metatag_views.metatags.edit', $params),
           ],
+          'translate' => [
+            'title' => t('Translate'),
+            'url' => Url::fromRoute('metatag_views.metatags.translate_overview', $params),
+          ],
+          'revert' => [
+            'title' => t('Revert'),
+            'url' => Url::fromRoute('metatag_views.metatags.revert', $params),
+          ],
         ],
-      ];
-
-      if ($this->moduleHandler->moduleExists('config_translation')) {
-        $element[$display_id]['ops']['#links']['translate'] = [
-          'title' => t('Translate'),
-          'url' => Url::fromRoute('metatag_views.metatags.translate_overview', $params),
-        ];
-      }
-
-      $element[$display_id]['ops']['#links']['revert'] = [
-        'title' => t('Revert'),
-        'url' => Url::fromRoute('metatag_views.metatags.revert', $params),
       ];
 
       // Build the rows for each of the metatag types.
@@ -221,7 +209,7 @@ class MetatagViewsController extends ControllerBase {
    *   The meta tag to output.
    *
    * @return string
-   *   An imploded string for metatags that are nested, ex. robots.
+   *   An imploded string for meta tags that are nested, ex. robots.
    */
   protected function prepareTagValue($value) {
     if (is_array($value)) {

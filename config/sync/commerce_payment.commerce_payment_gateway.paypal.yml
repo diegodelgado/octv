@@ -1,0 +1,22 @@
+uuid: 3fc825e0-3f0f-40a5-a9a5-051d69ca732e
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_paypal
+id: paypal
+label: Paypal
+weight: null
+plugin: paypal_express_checkout
+configuration:
+  api_username: info_api1.octubre.tv
+  api_password: JEQEHMBX4ANN7MS6
+  shipping_prompt: shipping_skip
+  signature: Aw9TrKl91dfetSDGrgZ5wmCfIkhMAwIU.kuVwih75ZjXP8NV1ondYvH4
+  solution_type: SoleBilling
+  display_label: PayPal
+  mode: live
+  payment_method_types:
+    - credit_card
+conditions: {  }
+conditionOperator: AND

@@ -11,7 +11,7 @@ dependencies:
 id: menufooter1
 theme: octb
 region: footer
-weight: -10
+weight: -14
 provider: null
 plugin: 'system_menu_block:menu-footer-1'
 settings:

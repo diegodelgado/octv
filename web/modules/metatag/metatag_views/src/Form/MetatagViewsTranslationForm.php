@@ -10,6 +10,7 @@ use Drupal\metatag\MetatagTagPluginManager;
 use Drupal\metatag\MetatagToken;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\language\ConfigurableLanguageManagerInterface;
+use Drupal\metatag_views\MetatagViewsValuesCleanerTrait;
 
 /**
  * Class MetatagViewsEditForm.
@@ -17,6 +18,8 @@ use Drupal\language\ConfigurableLanguageManagerInterface;
  * @package Drupal\metatag_views\Form
  */
 class MetatagViewsTranslationForm extends FormBase {
+
+  use MetatagViewsValuesCleanerTrait;
 
   /**
    * Drupal\metatag\MetatagManager definition.
@@ -43,8 +46,6 @@ class MetatagViewsTranslationForm extends FormBase {
   protected $tokenService;
 
   /**
-   * The plugin manager for metatag tags.
-   *
    * @var \Drupal\metatag\MetatagTagPluginManager
    */
   protected $tagPluginManager;
@@ -155,7 +156,7 @@ class MetatagViewsTranslationForm extends FormBase {
     $this->language = $this->languageManager->getLanguage($langcode);
     $this->sourceLanguage = $this->view->language();
 
-    // Get metatags from the view entity.
+    // Get meta tags from the view entity.
     $form['#tree'] = TRUE;
     $form['#attached']['library'][] = 'config_translation/drupal.config_translation.admin';
 
@@ -178,24 +179,12 @@ class MetatagViewsTranslationForm extends FormBase {
   }
 
   /**
-   * Add the translation form element for metatags available in the source.
+   * Add the translation form element for meta tags available in the source.
    */
   public function form(array $element, array $translated_values) {
-    // Process submitted metatag values and remove empty tags.
-    $tag_values = [];
-    foreach ($translated_values as $tag_id => $tag_value) {
-      // Some plugins need to process form input before storing it.
-      // Hence, we set it and then get it.
-      $tag = $this->tagPluginManager->createInstance($tag_id);
-      $tag->setValue($tag_value);
-      if (!empty($tag->value())) {
-        $tag_values[$tag_id] = $tag->value();
-      }
-    }
-    $translated_values = $tag_values;
-
+    $translated_values = $this->clearMetatagViewsDisallowedValues($translated_values);
     // Only offer form elements for tags present in the source language.
-    $source_values = array_filter($this->baseData);
+    $source_values = $this->removeEmptyTags($this->baseData);
 
     // Add the outer fieldset.
     $element += [
@@ -239,7 +228,7 @@ class MetatagViewsTranslationForm extends FormBase {
 
     // Save the configuration values, if they are different from the source
     // values in the base configuration. Otherwise remove the override.
-    $source_values = $base_config->get($config_path);
+    $source_values = $this->removeEmptyTags($base_config->get($config_path));
     if ($source_values !== $translated_values) {
       $config_translation->set($config_path, $translated_values);
     }

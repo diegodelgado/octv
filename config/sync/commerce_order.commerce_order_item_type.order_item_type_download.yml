@@ -1,0 +1,15 @@
+uuid: a9b245c4-62b1-4a75-a92a-8d9ea72cf188
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: digital_goods
+label: 'order item type download'
+id: order_item_type_download
+purchasableEntityType: ''
+orderType: order_type_download
+traits: {  }
+locked: false

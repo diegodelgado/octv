@@ -25,7 +25,8 @@
 <div id="referencia">
 <div id="imagen-referencia">
 
-{{ product.variation_field_imagen_producto }} 
+{{ product.variation_field_imagen_producto }}
+{{ product.field_embed }} 
 
 </div>
 <div id="contenido-referencia">
@@ -33,12 +34,13 @@
 <h1>{{ product.title }}</h1>
 {{ product.field_released }}     
 {{ product.body }}
-{{ product.field_embed }}
+
 {{ product.variation_price }}
 {{ product.variations }}
 <div class="field-node--field-link-itunes"><a href="{{ product.field_links.0['#url'] }}" target="_blank">{{ product.field_links.0['#title'] }}</a>
 <a href="{{ product.field_links.1['#url'] }}" target="_blank">{{ product.field_links.1['#title'] }}</a>
 <a href="{{ product.field_links.2['#url'] }}" target="_blank">{{ product.field_links.2['#title'] }}</a></div>
+
 
 
 

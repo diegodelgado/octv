@@ -1,15 +1,16 @@
-uuid: 08022fa1-5d0f-450b-9656-5dbb16708af0
+uuid: 675bf676-ab1e-4f1a-8910-d8bca360d998
 langcode: en
 status: true
 dependencies:
   module:
     - simplenews
+    - system
   theme:
     - octb
-id: simplenewssubscription
+id: simplenewssubscription_2
 theme: octb
-region: footer
-weight: -11
+region: content
+weight: 0
 provider: null
 plugin: simplenews_subscription_block
 settings:
@@ -20,5 +21,10 @@ settings:
   newsletters:
     default: default
   message: 'Stay informed - subscribe to our newsletter.'
-  unique_id: 6ea90c77-628e-407b-95fc-13951ec27e27
-visibility: {  }
+  unique_id: e42fac5d-d0d8-4c69-a658-99fdf514c56b
+visibility:
+  request_path:
+    id: request_path
+    pages: /subscribe
+    negate: false
+    context_mapping: {  }

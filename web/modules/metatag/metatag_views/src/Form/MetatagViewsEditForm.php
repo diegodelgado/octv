@@ -6,7 +6,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\metatag\MetatagManagerInterface;
-use Drupal\metatag\MetatagTagPluginManager;
+use Drupal\metatag_views\MetatagViewsValuesCleanerTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -16,19 +16,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class MetatagViewsEditForm extends FormBase {
 
-  /**
-   * The metatag manager.
-   *
-   * @var \Drupal\metatag\MetatagManagerInterface
-   */
-  protected $metatagManager;
+  use MetatagViewsValuesCleanerTrait;
 
   /**
-   * The plugin manager for metatag tags.
+   * Drupal\metatag\MetatagManager definition.
    *
-   * @var \Drupal\metatag\MetatagTagPluginManager
+   * @var \Drupal\metatag\MetatagManager
    */
-  protected $metatagTagManager;
+  protected $metatagManager;
 
   /**
    * @var \Drupal\Core\Entity\EntityStorageInterface
@@ -52,8 +47,7 @@ class MetatagViewsEditForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function __construct(MetatagTagPluginManager $metatag_plugin_manager, MetatagManagerInterface $metatag_manager, EntityTypeManagerInterface $entity_manager) {
-    $this->metatagTagManager = $metatag_plugin_manager;
+  public function __construct(MetatagManagerInterface $metatag_manager, EntityTypeManagerInterface $entity_manager) {
     $this->metatagManager = $metatag_manager;
     $this->viewsManager = $entity_manager->getStorage('view');
   }
@@ -63,7 +57,6 @@ class MetatagViewsEditForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('plugin.manager.metatag.tag'),
       $container->get('metatag.manager'),
       $container->get('entity_type.manager')
     );
@@ -84,7 +77,7 @@ class MetatagViewsEditForm extends FormBase {
     $view_id = \Drupal::request()->get('view_id');
     $display_id = \Drupal::request()->get('display_id');
 
-    // Get metatags from the view entity.
+    // Get meta tags from the view entity.
     $metatags = [];
     if ($view_id && $display_id) {
       $metatags = metatag_get_view_tags($view_id, $display_id);
@@ -165,33 +158,21 @@ class MetatagViewsEditForm extends FormBase {
     $view_name = $form_state->getValue('view');
     list($view_id, $display_id) = explode(':', $view_name);
 
-    // Process submitted metatag values and remove empty tags.
-    $tag_values = [];
-    $metatags = $form_state->cleanValues()->getValues();
-
+    $metatags = $form_state->getValues();
     unset($metatags['view']);
-    foreach ($metatags as $tag_id => $tag_value) {
-      // Some plugins need to process form input before storing it.
-      // Hence, we set it and then get it.
-      $tag = $this->metatagTagManager->createInstance($tag_id);
-      $tag->setValue($tag_value);
-      if (!empty($tag->value())) {
-        $tag_values[$tag_id] = $tag->value();
-      }
-    }
-    $metatags = $tag_values;
+    $metatags = $this->clearMetatagViewsDisallowedValues($metatags);
 
     /** @var \Drupal\views\ViewEntityInterface $view */
     $view = $this->viewsManager->load($view_id);
 
-    // Store the metatags on the view.
+    // Store the meta tags on the view.
     $config_name = $view->getConfigDependencyName();
     $config_path = 'display.' . $display_id . '.display_options.display_extenders.metatag_display_extender.metatags';
 
     // Set configuration values based on form submission. This always edits the
     // original language.
     $configuration = $this->configFactory()->getEditable($config_name);
-    if (empty($metatags)) {
+    if (empty($this->removeEmptyTags($metatags))) {
       $configuration->clear($config_path);
     }
     else {

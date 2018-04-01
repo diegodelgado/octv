@@ -1655,4 +1655,76 @@ li.checkout-progress--step__current {
 	margin-top: 20px;
 }
 
+
+/* PAGINA SUSCRIBE */
+
+.simplenews-subscriptions-block-e42fac5d-d0d8-4c69-a658-99fdf514c56b {
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+
+.simplenews-subscriptions-block-e42fac5d-d0d8-4c69-a658-99fdf514c56b .block__inner {
+	max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+	
+}
+
+.simplenews-subscriptions-block-e42fac5d-d0d8-4c69-a658-99fdf514c56b #edit-message {
+	color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 50px;
+	
+}
+
+
+/*MAIL CHIMP NEWSLETTER */
+
+#block-newsletter {
+	
+	
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#block-newsletter  .block__inner {
+	max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+	
+}
+
+#block-newsletter h2 {
+	text-align: center !important;
+	font-size: 30px !important;
+	font-family: 'Work Sans', sans-serif !important;
+    font-weight: 700 !important;
+	
+}
+#mc_embed_signup_scroll {
+	
+	
+	
+}
+
+#mc-embedded-subscribe {
+	background-color: white !important;
+    background-image: none !important;
+    border: 4px solid black !important;
+    font-weight: 700 !important;
+    color: black !important;
+    font-size: 20px !important;
+    margin: 0px !important;
+    padding: 0px 5px 30px 5px !important;
+    border-radius: 0px !important;
+}
+
  

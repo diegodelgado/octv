@@ -1,0 +1,25 @@
+uuid: c296d78d-3140-41ed-894b-f16841b8f200
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:74ae3e5e-3c00-4869-bde2-79e8f7e8a4e9'
+  module:
+    - block_content
+  theme:
+    - octb
+id: newsletter
+theme: octb
+region: footer
+weight: -15
+provider: null
+plugin: 'block_content:74ae3e5e-3c00-4869-bde2-79e8f7e8a4e9'
+settings:
+  id: 'block_content:74ae3e5e-3c00-4869-bde2-79e8f7e8a4e9'
+  label: newsletter
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
